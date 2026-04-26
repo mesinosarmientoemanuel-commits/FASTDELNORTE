@@ -11,45 +11,73 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop');
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
 
-        /* Estilos del Chatbot Interactivo */
+        /* DISEÑO DEL CHATBOT INTERACTIVO */
         #chat-window {
-            display: none;
+            display: none; /* Inicia oculto */
             position: fixed;
             bottom: 100px;
             right: 25px;
             width: 320px;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             z-index: 1000;
             overflow: hidden;
             border: 1px solid #e5e7eb;
+            animation: slideUp 0.3s ease-out;
         }
 
-        .chat-header { background: #1e40af; color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; }
-        .chat-body { padding: 15px; background: #f9fafb; max-height: 400px; overflow-y: auto; }
-        .bot-msg { background: #e5e7eb; padding: 12px; border-radius: 15px 15px 15px 0; font-size: 14px; margin-bottom: 10px; color: #1f2937; }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .chat-header { 
+            background: #1e40af; 
+            color: white; 
+            padding: 18px; 
+            font-weight: 800; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .chat-body { padding: 20px; background: #f9fafb; }
         
+        .bot-msg { 
+            background: #f3f4f6; 
+            padding: 12px 15px; 
+            border-radius: 18px 18px 18px 0; 
+            font-size: 14px; 
+            margin-bottom: 15px; 
+            color: #1f2937;
+            line-height: 1.5;
+            border: 1px solid #e5e7eb;
+        }
+
         .chat-option {
             display: block;
             width: 100%;
             padding: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             background: white;
-            border: 1px solid #1e40af;
+            border: 2px solid #1e40af;
             color: #1e40af;
             border-radius: 12px;
             font-size: 13px;
             font-weight: 700;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
-        .chat-option:hover { background: #1e40af; color: white; }
+        .chat-option:hover { background: #1e40af; color: white; transform: scale(1.02); }
 
         .whatsapp-trigger {
             position: fixed;
@@ -65,9 +93,11 @@
             font-size: 32px;
             color: white;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             z-index: 1001;
+            transition: all 0.3s ease;
         }
+        .whatsapp-trigger:hover { transform: rotate(10deg) scale(1.1); }
     </style>
 </head>
 <body class="text-gray-900 bg-white">
@@ -77,46 +107,51 @@
             <div class="bg-blue-600 p-2 rounded-lg text-white">
                 <i class="fas fa-truck-moving text-xl"></i>
             </div>
-            <span class="text-xl font-bold tracking-tight text-blue-900 uppercase">Fast del Norte <span class="text-blue-500">S.A.S.</span></span>
+            <span class="text-xl font-extrabold tracking-tight text-blue-900 uppercase italic">Fast del Norte <span class="text-blue-500">S.A.S.</span></span>
         </div>
-        <a href="tel:3226753828" class="hidden md:block text-sm font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">Llamar: 322 675 3828</a>
+        <div class="hidden md:block font-bold text-blue-900">Barranquilla | 322 675 3828</div>
     </nav>
 
-    <section class="hero-section h-[60vh] flex items-center justify-center text-center text-white px-6">
+    <header class="hero-section h-[60vh] flex items-center justify-center text-center text-white px-6">
         <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 uppercase italic">Su patrimonio <br><span class="text-blue-400 underline underline-offset-8">está seguro</span></h1>
-            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto opacity-90 italic">
-                "Ofrecemos servicios integrales de transporte terrestre de mercancías y pasajeros."
+            <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase italic tracking-tighter">Su patrimonio <br><span class="text-blue-400 underline underline-offset-8">está seguro</span></h1>
+            <p class="text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto opacity-90 leading-relaxed">
+                Transporte terrestre de carga y pasajeros con los más altos estándares de calidad y seguridad en Colombia.
             </p>
         </div>
-    </section>
+    </header>
 
     <section class="py-20 px-8 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="p-8 border-l-4 border-blue-600 bg-slate-50">
-                <h2 class="text-2xl font-bold mb-4 text-blue-900 uppercase">Misión</h2>
-                <p class="text-gray-600 leading-relaxed italic">Garantizamos seguridad y eficiencia mediante soluciones logísticas confiables y planificación adecuada de rutas.</p>
+            <div class="p-10 bg-slate-50 border-t-8 border-blue-900 rounded-xl shadow-sm">
+                <h2 class="text-3xl font-black mb-6 text-blue-900 uppercase italic">Misión</h2>
+                <p class="text-gray-600 leading-relaxed text-lg">Ofrecer servicios integrales de transporte terrestre de mercancías y pasajeros, garantizando altos estándares de calidad, seguridad y eficiencia mediante soluciones logísticas confiables.</p>
             </div>
-            <div class="p-8 border-l-4 border-orange-500 bg-slate-50">
-                <h2 class="text-2xl font-bold mb-4 text-blue-900 uppercase">Visión 2031</h2>
-                <p class="text-gray-600 leading-relaxed italic">Consolidarnos como empresa líder en Colombia reconocida por su eficiencia operativa e innovación tecnológica.</p>
+            <div class="p-10 bg-blue-900 text-white border-t-8 border-blue-400 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-black mb-6 uppercase italic text-blue-400">Visión 2031</h2>
+                <p class="leading-relaxed text-lg opacity-90">Consolidarse para el año 2031 como una empresa líder en el sector del transporte terrestre en Colombia, reconocida por su eficiencia operativa e innovación tecnológica avanzada.</p>
             </div>
         </div>
     </section>
 
+    <footer class="py-12 border-t border-gray-100 text-center">
+        <p class="font-black text-blue-900 uppercase italic">Fast del Norte S.A.S.</p>
+        <p class="text-gray-400 text-xs tracking-widest mt-2 uppercase">Barranquilla • 2026</p>
+    </footer>
+
     <div id="chat-window">
         <div class="chat-header">
-            <span><i class="fas fa-robot mr-2"></i> Asistente Virtual</span>
-            <button onclick="toggleChat()" class="text-white hover:text-gray-200 text-xl">&times;</button>
+            <span><i class="fas fa-robot mr-2"></i> ASISTENTE VIRTUAL</span>
+            <button onclick="toggleChat()" class="hover:opacity-70">&times;</button>
         </div>
         <div class="chat-body" id="chat-content">
             <div class="bot-msg">
-                Hola, bienvenido a <b>Fast del Norte S.A.S.</b> 👋 ¿Qué servicio necesita hoy?
+                Hola, bienvenido a <b>Fast del Norte S.A.S.</b> 👋 <br><br>¿En qué tipo de servicio podemos ayudarle hoy?
             </div>
             <div id="chat-options">
-                <button onclick="processOption('Transporte de Carga')" class="chat-option">🚛 Transporte de Carga</button>
-                <button onclick="processOption('Transporte de Pasajeros')" class="chat-option">🚌 Transporte de Pasajeros</button>
-                <button onclick="processOption('Información General')" class="chat-option">📄 Otra información</button>
+                <button onclick="processChoice('Transporte de Carga')" class="chat-option">📦 Transporte de Carga</button>
+                <button onclick="processChoice('Transporte de Pasajeros')" class="chat-option">👥 Transporte de Pasajeros</button>
+                <button onclick="processChoice('Información General')" class="chat-option">📑 Otras Consultas</button>
             </div>
         </div>
     </div>
@@ -126,31 +161,36 @@
     </div>
 
     <script>
+        // Función para abrir y cerrar la ventana de chat
         function toggleChat() {
-            var chat = document.getElementById("chat-window");
+            const chat = document.getElementById("chat-window");
             chat.style.display = (chat.style.display === "block") ? "none" : "block";
         }
 
-        function processOption(option) {
+        // Función para procesar la opción elegida
+        function processChoice(option) {
             const chatContent = document.getElementById("chat-content");
             const optionsDiv = document.getElementById("chat-options");
 
-            // 1. Ocultar opciones para que parezca conversación
+            // Ocultar los botones para que parezca una conversación
             optionsDiv.style.display = "none";
 
-            // 2. Agregar mensaje de respuesta del bot
+            // Crear el mensaje de respuesta del bot
             const responseMsg = document.createElement("div");
             responseMsg.className = "bot-msg";
+            responseMsg.style.background = "#dcfce7"; // Un color verde suave para éxito
+            responseMsg.style.borderColor = "#22c55e";
             responseMsg.innerHTML = "<b>Muy pronto lo pondremos con uno de nuestros asesores vía WhatsApp para darle más información y su cotización.</b>";
+            
             chatContent.appendChild(responseMsg);
 
-            // 3. Esperar 2 segundos y redirigir a WhatsApp
+            // Redirigir a WhatsApp después de 2.5 segundos
             setTimeout(function() {
                 const phone = "573226753828";
-                const message = `Hola Fast del Norte S.A.S., me interesa el servicio de: ${option}. Quedo atento a mi cotización.`;
+                const message = `Hola Fast del Norte S.A.S., me interesa el servicio de: ${option}. Solicito información y cotización.`;
                 const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
                 window.open(url, '_blank');
-            }, 2000);
+            }, 2500);
         }
     </script>
 
