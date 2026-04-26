@@ -16,47 +16,58 @@
             background-position: center;
         }
 
-        /* Estilo del Chatbot */
-        .chatbot-container {
+        /* Estilos del Chatbot Interactivo */
+        #chat-window {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 320px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+
+        .chat-header { background: #1e40af; color: white; padding: 15px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; }
+        .chat-body { padding: 15px; background: #f9fafb; max-height: 400px; overflow-y: auto; }
+        .bot-msg { background: #e5e7eb; padding: 12px; border-radius: 15px 15px 15px 0; font-size: 14px; margin-bottom: 10px; color: #1f2937; }
+        
+        .chat-option {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: white;
+            border: 1px solid #1e40af;
+            color: #1e40af;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .chat-option:hover { background: #1e40af; color: white; }
+
+        .whatsapp-trigger {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .chat-pop-up {
-            background: white;
-            padding: 12px 20px;
-            border-radius: 15px 15px 0 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            margin-bottom: 10px;
-            border: 1px solid #e5e7eb;
-            font-size: 14px;
-            font-weight: 600;
-            color: #111827;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .whatsapp-button {
-            background-color: #25d366;
-            width: 60px;
-            height: 60px;
+            background: #25d366;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 32px;
             color: white;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 1001;
         }
-
-        .whatsapp-button:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="text-gray-900 bg-white">
@@ -68,54 +79,80 @@
             </div>
             <span class="text-xl font-bold tracking-tight text-blue-900 uppercase">Fast del Norte <span class="text-blue-500">S.A.S.</span></span>
         </div>
-        <div class="hidden md:flex gap-8 text-sm font-semibold text-gray-600 uppercase tracking-widest">
-            <a href="#inicio" class="hover:text-blue-600">Inicio</a>
-            <a href="#nosotros" class="hover:text-blue-600">Nosotros</a>
-            <a href="#contacto" class="hover:text-blue-600">Contacto</a>
-        </div>
-        <a href="https://wa.me/573226753828" target="_blank" class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition">
-            Llamar ahora
-        </a>
+        <a href="tel:3226753828" class="hidden md:block text-sm font-bold text-blue-600 bg-blue-50 px-4 py-2 rounded-lg">Llamar: 322 675 3828</a>
     </nav>
 
-    <section id="inicio" class="hero-section h-[70vh] flex items-center justify-center text-center text-white px-6">
+    <section class="hero-section h-[60vh] flex items-center justify-center text-center text-white px-6">
         <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight uppercase italic">Su patrimonio <br><span class="text-blue-400 underline decoration-white underline-offset-8">está seguro</span></h1>
-            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto opacity-90">
-                Soluciones integrales de transporte terrestre de mercancías y pasajeros con altos estándares de calidad y eficiencia.
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 uppercase italic">Su patrimonio <br><span class="text-blue-400 underline underline-offset-8">está seguro</span></h1>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto opacity-90 italic">
+                "Ofrecemos servicios integrales de transporte terrestre de mercancías y pasajeros."
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#nosotros" class="bg-white text-blue-900 px-10 py-4 rounded-lg font-bold uppercase text-sm hover:bg-blue-500 hover:text-white transition">Nuestra Empresa</a>
-                <div class="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-4 rounded-lg border border-white/20">
-                    <i class="fas fa-phone-alt text-blue-400"></i>
-                    <span class="font-bold">322 675 3828</span>
-                </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="p-8 border-l-4 border-blue-600 bg-slate-50">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900 uppercase">Misión</h2>
+                <p class="text-gray-600 leading-relaxed italic">Garantizamos seguridad y eficiencia mediante soluciones logísticas confiables y planificación adecuada de rutas.</p>
+            </div>
+            <div class="p-8 border-l-4 border-orange-500 bg-slate-50">
+                <h2 class="text-2xl font-bold mb-4 text-blue-900 uppercase">Visión 2031</h2>
+                <p class="text-gray-600 leading-relaxed italic">Consolidarnos como empresa líder en Colombia reconocida por su eficiencia operativa e innovación tecnológica.</p>
             </div>
         </div>
     </section>
 
-    <section id="nosotros" class="py-24 px-8 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16">
-            <div>
-                <div class="w-12 h-1 text-blue-600 bg-blue-600 mb-6"></div>
-                <h2 class="text-4xl font-bold mb-8 uppercase italic tracking-tighter">Misión</h2>
-                <p class="text-gray-600 leading-relaxed text-lg mb-6">
-                    Ofrecer servicios integrales de transporte terrestre de mercancías y pasajeros, caracterizados por altos estándares de calidad, seguridad y eficiencia. 
-                </p>
-                <p class="text-gray-600 leading-relaxed text-lg">
-                    Buscamos satisfacer las necesidades de nuestros clientes mediante soluciones logísticas confiables, apoyadas en la planificación adecuada de rutas, el uso eficiente de los recursos y herramientas tecnológicas.
-                </p>
+    <div id="chat-window">
+        <div class="chat-header">
+            <span><i class="fas fa-robot mr-2"></i> Asistente Virtual</span>
+            <button onclick="toggleChat()" class="text-white hover:text-gray-200 text-xl">&times;</button>
+        </div>
+        <div class="chat-body" id="chat-content">
+            <div class="bot-msg">
+                Hola, bienvenido a <b>Fast del Norte S.A.S.</b> 👋 ¿Qué servicio necesita hoy?
             </div>
-            <div class="bg-gray-50 p-12 rounded-3xl border border-gray-100">
-                <h2 class="text-4xl font-bold mb-8 uppercase italic tracking-tighter text-blue-900">Visión 2031</h2>
-                <p class="text-gray-600 leading-relaxed text-lg mb-6">
-                    Consolidarse para el año 2031 como una empresa líder en el sector del transporte terrestre en Colombia, reconocida por su eficiencia operativa y excelencia.
-                </p>
-                <p class="text-gray-600 leading-relaxed text-lg italic border-l-4 border-blue-500 pl-6">
-                    "Proyectamos expandir nuestra cobertura a nivel nacional, fortalecer la red de distribución e incorporar tecnologías avanzadas para la gestión de flota."
-                </p>
+            <div id="chat-options">
+                <button onclick="processOption('Transporte de Carga')" class="chat-option">🚛 Transporte de Carga</button>
+                <button onclick="processOption('Transporte de Pasajeros')" class="chat-option">🚌 Transporte de Pasajeros</button>
+                <button onclick="processOption('Información General')" class="chat-option">📄 Otra información</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="py-20 bg-blue-900 text-white px
+    <div class="whatsapp-trigger" onclick="toggleChat()">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <script>
+        function toggleChat() {
+            var chat = document.getElementById("chat-window");
+            chat.style.display = (chat.style.display === "block") ? "none" : "block";
+        }
+
+        function processOption(option) {
+            const chatContent = document.getElementById("chat-content");
+            const optionsDiv = document.getElementById("chat-options");
+
+            // 1. Ocultar opciones para que parezca conversación
+            optionsDiv.style.display = "none";
+
+            // 2. Agregar mensaje de respuesta del bot
+            const responseMsg = document.createElement("div");
+            responseMsg.className = "bot-msg";
+            responseMsg.innerHTML = "<b>Muy pronto lo pondremos con uno de nuestros asesores vía WhatsApp para darle más información y su cotización.</b>";
+            chatContent.appendChild(responseMsg);
+
+            // 3. Esperar 2 segundos y redirigir a WhatsApp
+            setTimeout(function() {
+                const phone = "573226753828";
+                const message = `Hola Fast del Norte S.A.S., me interesa el servicio de: ${option}. Quedo atento a mi cotización.`;
+                const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
