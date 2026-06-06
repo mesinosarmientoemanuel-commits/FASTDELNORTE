@@ -3,219 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fast del Norte S.A.S. | Portafolio de Servicios</title>
+    
+    <!-- Título Principal -->
+    <title>Fast del Norte S.A.S | Transporte de Carga Seguro</title>
+    
+    <!-- Configuración para compartir links (Open Graph) -->
+    <meta property="og:title" content="Fast del Norte S.A.S | Especialistas en Carga">
+    <meta property="og:description" content="Transporte de carga y mercancías con respaldo legal y seguridad total. Operamos desde Barranquilla.">
+    <meta property="og:type" content="website">
+    
+    <meta name="description" content="Fast del Norte S.A.S - Líderes en logística y transporte de carga en Colombia. Empresa legalmente constituida.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
         
-        :root { --amarillo: #FFD700; --negro: #121212; }
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1a1a; }
-        h1, h2, h3, .font-black { font-family: 'Archivo Black', sans-serif; }
+        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
 
-        .hero-main {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop');
-            background-size: cover; background-position: center;
+        .hero-bg {
+            background: linear-gradient(rgba(10, 15, 30, 0.85), rgba(10, 15, 30, 0.85)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; 
+            background-position: center;
         }
 
-        /* CHATBOT */
-        #chat-window {
-            display: none; position: fixed; bottom: 100px; right: 25px;
-            width: 350px; background: white; border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2); z-index: 2000;
-            overflow: hidden; border: 1px solid #e5e7eb;
+        .trust-card:hover {
+            transform: translateY(-10px);
+            border-color: #fbbf24;
         }
-        .chat-header { background: var(--negro); color: white; padding: 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--amarillo); }
-        .chat-body { padding: 20px; background: #fdfdfd; max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
-        .bot-bubble { background: #f1f5f9; padding: 12px; border-radius: 15px 15px 15px 0; font-size: 14px; border: 1px solid #e2e8f0; }
-        .user-action { background: white; border: 2px solid var(--negro); padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; font-size: 13px; text-align: center; }
-        .user-action:hover { background: var(--amarillo); color: black; }
 
-        .wa-float {
-            position: fixed; bottom: 25px; right: 25px; background: #25d366;
-            width: 65px; height: 65px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; font-size: 30px;
-            color: white; cursor: pointer; z-index: 2001; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        /* Estilos del Chatbot */
+        #fast-chatbot {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 90%;
+            max-width: 400px;
+            height: 600px;
+            max-height: 85vh;
+            background: white;
+            z-index: 10000;
+            flex-direction: column;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.6);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .chat-header {
+            background: #0f172a;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #fbbf24;
+        }
+
+        .btn-close-x {
+            background: #ef4444;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);
+        }
+
+        .chat-window {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f1f5f9;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .msg-bot {
+            background: white;
+            padding: 15px;
+            border-radius: 0 20px 20px 20px;
+            max-width: 85%;
+            font-size: 14px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .msg-user {
+            background: #0f172a;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 20px 20px 0 20px;
+            margin-left: auto;
+            max-width: 80%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .timer-badge {
+            font-size: 11px;
+            background: #fee2e2;
+            color: #ef4444;
+            padding: 4px 10px;
+            border-radius: 10px;
+            margin-top: 8px;
+            display: inline-block;
+            font-weight: bold;
+            border: 1px solid #fecaca;
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50">
 
-    <div class="bg-black text-white py-2 px-6 text-[10px] font-bold uppercase flex justify-center md:justify-between items-center border-b border-yellow-400">
-        <span class="hidden md:block italic tracking-widest"><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> Barranquilla: Vía 40 # 73 - 290</span>
-        <span class="tracking-widest">Contacto Directo: 322 675 3828</span>
-    </div>
-
-    <nav class="bg-white p-5 sticky top-0 z-50 shadow-sm border-b">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-black italic uppercase tracking-tighter">Fast del Norte <span class="text-yellow-500">S.A.S.</span></div>
-            <div class="space-x-8 hidden md:flex font-bold text-[11px] uppercase tracking-widest">
+    <nav class="bg-white border-b-4 border-yellow-500 h-20 flex items-center sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-slate-900 p-2 rounded-lg shadow-lg">
+                    <i class="fa-solid fa-truck-fast text-yellow-400 text-2xl"></i>
+                </div>
+                <h1 class="font-black text-xl uppercase italic tracking-tighter text-slate-900 leading-none">Fast del Norte <span class="text-yellow-500">S.A.S</span></h1>
+            </div>
+            <div class="hidden md:flex gap-8 items-center text-[11px] font-bold uppercase tracking-widest text-slate-600">
+                <a href="#confianza" class="hover:text-yellow-600 transition">Confianza</a>
                 <a href="#nosotros" class="hover:text-yellow-600 transition">Nosotros</a>
-                <a href="#portafolio" class="hover:text-yellow-600 transition">Portafolio</a>
-                <a href="#reseñas" class="hover:text-yellow-600 transition">Clientes</a>
+                <button onclick="openChat()" class="bg-slate-900 text-yellow-500 px-6 py-2.5 rounded-full font-black italic hover:bg-slate-800 transition shadow-lg">COTIZAR CARGA</button>
             </div>
         </div>
     </nav>
 
-    <header class="hero-main h-[60vh] flex items-center justify-center text-center text-white px-6">
-        <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-7xl mb-4 italic leading-tight uppercase">Seguridad <span class="text-yellow-400">Integral</span> <br>en cada Kilómetro</h1>
-            <p class="text-lg md:text-xl opacity-90 italic font-light">Su aliado estratégico en logística y transporte desde Barranquilla.</p>
-        </div>
-    </header>
-
-    <section id="nosotros" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-20">
-                <h2 class="text-4xl font-black mb-8 uppercase italic underline decoration-yellow-400">¿Quiénes Somos?</h2>
-                <p class="text-xl text-gray-600 leading-relaxed italic">
-                    Somos una empresa barranquillera especializada en soluciones de transporte terrestre. En **Fast del Norte S.A.S.**, entendemos que no solo movemos carga o personas, movemos sueños y patrimonio. Nuestra base operativa en la Vía 40 nos permite una conexión ágil con los puntos clave de la región.
-                </p>
+    <section class="hero-bg text-white py-28 md:py-48 px-6">
+        <div class="container mx-auto">
+            <div class="inline-flex items-center gap-2 bg-yellow-500 text-slate-900 font-black text-[11px] uppercase tracking-widest px-4 py-1.5 mb-8 rounded-full shadow-lg">
+                <i class="fa-solid fa-certificate"></i> Fast del Norte S.A.S - Oficial
             </div>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="p-10 border-2 border-black bg-gray-50 rounded-xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-bullseye text-6xl"></i>
+            <h2 class="text-5xl md:text-8xl font-black mb-8 uppercase italic leading-[0.95] tracking-tighter">
+                SU MERCANCÍA <br><span class="text-yellow-500 text-shadow text-6xl md:text-9xl">ESTÁ SEGURA</span>
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 italic text-gray-200 max-w-3xl leading-relaxed">
+                Empresa de logística y carga constituida con todas las de la ley. Pólizas de cumplimiento y rastreo en tiempo real para su total tranquilidad.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4">
+                <button onclick="openChat()" class="bg-yellow-500 text-slate-900 px-12 py-5 rounded-xl font-black uppercase italic text-xl shadow-2xl hover:bg-yellow-400 transition-all transform hover:scale-105">
+                    Cotizar Transporte
+                </button>
+                <div class="flex items-center gap-4 px-6 py-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
+                    <i class="fa-solid fa-location-dot text-yellow-500 text-2xl"></i>
+                    <div class="text-left">
+                        <p class="text-[10px] font-bold text-yellow-400 uppercase tracking-widest leading-none mb-1">Barranquilla</p>
+                        <p class="text-sm font-bold italic">Vía 40 • Sede Principal</p>
                     </div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Nuestra Misión</h3>
-                    <p class="text-gray-600 italic leading-relaxed">Ofrecer servicios integrales de transporte terrestre de mercancías y pasajeros con altos estándares de calidad, seguridad y eficiencia mediante soluciones logísticas confiables.</p>
-                </div>
-                <div class="p-10 bg-black text-white rounded-xl relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-eye text-6xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic text-yellow-400">Nuestra Visión 2031</h3>
-                    <p class="text-gray-300 italic leading-relaxed">Consolidarse para el año 2031 como una empresa líder en el sector del transporte terrestre en Colombia, reconocida por su innovación tecnológica y excelencia operativa.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portafolio" class="py-24 bg-gray-50">
+    <section id="confianza" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black text-center mb-16 uppercase italic">Portafolio de <span class="text-yellow-600">Servicios</span></h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 border-4 border-black text-left">
-                    <i class="fas fa-truck-moving text-3xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-3xl font-black mb-4 uppercase italic">Transporte de Carga</h3>
-                    <p class="text-gray-600 mb-8 italic">Desde carga pesada hasta distribución urbana, protegemos su mercancía con los mejores protocolos de seguridad.</p>
-                    <button onclick="toggleChat()" class="bg-black text-white px-8 py-3 font-bold uppercase text-xs hover:bg-yellow-400 hover:text-black transition">Consultar Servicio</button>
-                </div>
-                <div class="bg-white p-8 border-4 border-yellow-400 text-left">
-                    <i class="fas fa-user-friends text-3xl text-black mb-4"></i>
-                    <h3 class="text-3xl font-black mb-4 uppercase italic">Transporte de Pasajeros</h3>
-                    <p class="text-gray-600 mb-8 italic">Servicio especial para empresas y turismo. Puntualidad y confort garantizados en toda nuestra flota.</p>
-                    <button onclick="toggleChat()" class="bg-yellow-400 text-black px-8 py-3 font-bold uppercase text-xs hover:bg-black hover:text-white transition">Consultar Servicio</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="reseñas" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black text-center mb-16 uppercase italic">Opiniones de nuestros Clientes</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">"Excelente servicio de transporte de carga en Barranquilla. La comunicación fue constante y la mercancía llegó intacta. Muy serios."</p>
-                    <p class="font-black text-xs uppercase">Jorge Eliécer — <span class="text-gray-400">Logística Textil</span></p>
+                <div class="p-10 bg-slate-50 border-2 border-slate-100 rounded-[40px] trust-card transition-all">
+                    <i class="fa-solid fa-shield-check text-yellow-500 text-5xl mb-6"></i>
+                    <h4 class="font-black uppercase italic text-xl mb-4 text-slate-900">Respaldo Legal</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">Contamos con todas las habilitaciones de ley para operar carga a nivel nacional. Seguridad jurídica en cada contrato.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm border-t-4 border-yellow-400">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star text-gray-300"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">"El transporte para el evento empresarial fue muy puntual. Los vehículos estaban limpios y el conductor fue muy profesional."</p>
-                    <p class="font-black text-xs uppercase">Andrea M. — <span class="text-gray-400">Coordinadora de Eventos</span></p>
+                <div class="p-10 bg-slate-50 border-2 border-slate-100 rounded-[40px] trust-card transition-all">
+                    <i class="fa-solid fa-route text-yellow-500 text-5xl mb-6"></i>
+                    <h4 class="font-black uppercase italic text-xl mb-4 text-slate-900">Control Total</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">Monitoreo satelital 24/7 de su carga. Información veraz sobre la ubicación de sus bienes y mercancías.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
-                    <div class="flex text-yellow-500 mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic mb-6">"La mejor opción logística en la Vía 40. Precios justos y cumplimiento total de las pólizas de seguridad."</p>
-                    <p class="font-black text-xs uppercase">Carlos V. — <span class="text-gray-400">Distribuidora Norte</span></p>
+                <div class="p-10 bg-slate-50 border-2 border-slate-100 rounded-[40px] trust-card transition-all">
+                    <i class="fa-solid fa-clock text-yellow-500 text-5xl mb-6"></i>
+                    <h4 class="font-black uppercase italic text-xl mb-4 text-slate-900">Cumplimiento</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed italic">Nuestra visión es la puntualidad. Procesos logísticos optimizados para cumplir con sus tiempos de entrega.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-white py-16 text-center">
+    <section id="nosotros" class="py-24 bg-slate-900 text-white">
         <div class="container mx-auto px-6">
-            <p class="text-2xl font-black italic mb-2 uppercase">Fast del Norte <span class="text-yellow-400">S.A.S.</span></p>
-            <p class="text-gray-500 text-sm mb-8 italic">Vía 40 # 73 - 290, Barranquilla, Atlántico</p>
-            <div class="flex justify-center gap-6 text-xl text-yellow-400">
-                <i class="fab fa-facebook hover:text-white cursor-pointer transition"></i>
-                <i class="fab fa-whatsapp hover:text-white cursor-pointer transition" onclick="toggleChat()"></i>
-                <i class="fab fa-instagram hover:text-white cursor-pointer transition"></i>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="bg-slate-800 p-12 rounded-[50px] border border-slate-700 shadow-2xl">
+                    <h3 class="text-yellow-500 font-black uppercase tracking-[0.3em] text-xs mb-4">Nuestra Identidad</h3>
+                    <p class="text-2xl font-bold italic mb-6">Fast del Norte S.A.S se proyecta para el 2031 como la empresa más confiable de la región en movimiento de carga y mercancías.</p>
+                    <p class="text-slate-400 italic mb-4">Misión: Brindar soluciones exclusivas de transporte de carga y logística con estándares de seguridad superiores y respaldo real. Nos dedicamos 100% a la protección y traslado de su patrimonio comercial e industrial.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-5xl font-black uppercase italic mb-6">ESPECIALISTAS EN <br><span class="text-yellow-500">CARGA Y LOGÍSTICA</span></h3>
+                    <p class="text-slate-400 italic text-lg mb-6">Operamos desde Barranquilla para todo el país, garantizando procesos transparentes y formales diseñados a la medida de sus envíos de mercancía.</p>
+                    <ul class="space-y-3 text-slate-300 font-medium italic text-left inline-block md:block">
+                        <li><i class="fa-solid fa-truck-fast text-yellow-500 mr-3"></i> Flota exclusiva para mercancías e industria</li>
+                        <li><i class="fa-solid fa-shield-halved text-yellow-500 mr-3"></i> Rutas nacionales seguras y monitoreadas 24/7</li>
+                        <li><i class="fa-solid fa-file-contract text-yellow-500 mr-3"></i> Pólizas de carga y respaldo legal total</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <div id="fast-chatbot">
+        <div class="chat-header">
+            <div class="flex items-center gap-3">
+                <div class="bg-yellow-400 text-slate-900 w-10 h-10 rounded-full flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <p class="font-black text-[11px] uppercase leading-none">Fast del Norte S.A.S</p>
+                    <p class="text-[9px] text-green-400 font-bold uppercase italic mt-1">Línea de Carga</p>
+                </div>
+            </div>
+            <button class="btn-close-x" onclick="resetAndCloseChat()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div id="chat-content" class="chat-window"></div>
+        <div id="chat-options" class="p-6 bg-white border-t space-y-3">
+            <button onclick="sendChoice('Transporte de Carga')" class="w-full bg-slate-900 text-yellow-500 py-4 rounded-2xl font-black uppercase italic text-xs hover:bg-yellow-500 hover:text-slate-900 transition-all">
+                Cotizar Transporte de Carga
+            </button>
+        </div>
+    </div>
+
+    <footer class="bg-white py-16 border-t-8 border-slate-900">
+        <div class="container mx-auto px-6 text-center">
+            <h5 class="font-black text-3xl uppercase italic mb-4 tracking-tighter text-slate-900">Fast del Norte <span class="text-yellow-500">S.A.S</span></h5>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-slate-700 font-bold italic mb-8">
+                <p><i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i> Calle 70 Vía 40 • Barranquilla</p>
+                <p><i class="fa-solid fa-phone text-yellow-500 mr-2"></i> +57 322 675 3828</p>
+            </div>
+            <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.5em]">NIT: 901.654.321-0 | © 2024 TODOS LOS DERECHOS RESERVADOS</p>
         </div>
     </footer>
 
-    <div id="chat-window">
-        <div class="chat-header">
-            <div class="flex items-center gap-2">
-                <span class="text-[10px] font-black uppercase tracking-widest">Soporte Corporativo</span>
-            </div>
-            <button onclick="toggleChat()" class="text-yellow-400 text-2xl font-black">&times;</button>
-        </div>
-        <div class="chat-body" id="chat-content"></div>
-    </div>
-
-    <div class="wa-float" onclick="toggleChat()">
-        <i class="fab fa-whatsapp"></i>
-    </div>
+    <!-- Botón Flotante WhatsApp -->
+    <button onclick="openChat()" class="fixed bottom-6 right-6 bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl z-[999] border-4 border-white">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
 
     <script>
-        const chatContent = document.getElementById("chat-content");
+        const chatContent = document.getElementById('chat-content');
+        const chatbot = document.getElementById('fast-chatbot');
+        const chatOptions = document.getElementById('chat-options');
 
-        function initChat() {
+        function loadInitialGreeting() {
             chatContent.innerHTML = `
-                <div class="bot-bubble font-bold">Bienvenido a Fast del Norte S.A.S. 👋</div>
-                <div class="bot-bubble">Soy su asistente virtual. ¿En qué servicio de nuestro portafolio está interesado hoy?</div>
-                <div id="chat-options" class="flex flex-col gap-2 mt-2">
-                    <div onclick="process('Carga')" class="user-action">🚛 Transporte de Carga</div>
-                    <div onclick="process('Pasajeros')" class="user-action">🚌 Transporte de Pasajeros</div>
+                <div class="msg-bot shadow-sm">
+                    <div class="text-yellow-500"><i class="fa-solid fa-shield-check"></i></div>
+                    <div>
+                        Bienvenido a <strong>Fast del Norte S.A.S</strong>. 👋 <br><br>
+                        Somos especialistas en transporte de carga legalmente constituidos. Para brindarle seguridad, todas nuestras cotizaciones logísticas son formales. <br><br>
+                        <strong>¿Desea cotizar un servicio de carga?</strong>
+                    </div>
                 </div>
             `;
+            chatOptions.style.display = 'block';
         }
 
-        function toggleChat() {
-            const win = document.getElementById("chat-window");
-            if (win.style.display === "block") {
-                win.style.display = "none";
-                setTimeout(initChat, 400); // REINICIO AL CERRAR
-            } else {
-                win.style.display = "block";
-                if(chatContent.innerHTML === "") initChat();
-            }
+        function openChat() {
+            if (chatContent.innerHTML.trim() === "") loadInitialGreeting();
+            chatbot.style.display = 'flex';
         }
 
-        function process(service) {
-            document.getElementById("chat-options").style.display = "none";
-            const u = document.createElement("div");
-            u.className = "bg-black text-yellow-400 p-2 rounded-lg self-end text-xs font-bold uppercase";
-            u.innerHTML = service;
-            chatContent.appendChild(u);
+        function resetAndCloseChat() {
+            chatbot.style.display = 'none';
+            chatContent.innerHTML = "";
+            chatOptions.style.display = 'block';
+        }
+
+        function sendChoice(opt) {
+            const userMsg = document.createElement('div');
+            userMsg.className = 'msg-user shadow-md';
+            userMsg.innerText = `Cotizar ${opt}`;
+            chatContent.appendChild(userMsg);
+            chatContent.scrollTop = chatContent.scrollHeight;
+            chatOptions.style.display = 'none';
 
             setTimeout(() => {
-                const b = document.createElement("div");
-                b.className = "bot-bubble font-bold border-l-4 border-yellow-500";
-                b.innerHTML = "Excelente elección. Lo conectaremos de inmediato con un asesor comercial vía WhatsApp.";
-                chatContent.appendChild(b);
+                const botReply = document.createElement('div');
+                botReply.className = 'msg-bot bg-white border-yellow-200 shadow-lg border-2';
+                botReply.innerHTML = `
+                    <div class="text-yellow-600"><i class="fa-solid fa-spinner fa-spin"></i></div>
+                    <div>
+                        <strong>Procesando...</strong> <br>
+                        Muy pronto lo pondremos en contacto con un asesor especializado en carga por WhatsApp.
+                        <br><span class="timer-badge">Redireccionando en 15s...</span>
+                    </div>
+                `;
+                chatContent.appendChild(botReply);
                 chatContent.scrollTop = chatContent.scrollHeight;
-
-                setTimeout(() => {
-                    const phone = "573226753828";
-                    const text = encodeURIComponent(`Hola Fast del Norte S.A.S., deseo cotizar el servicio de ${service} que vi en su página web.`);
-                    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-                }, 1500);
             }, 800);
+
+            setTimeout(() => {
+                const phone = "573226753828";
+                const message = encodeURIComponent(`Hola Fast del Norte S.A.S, solicito cotización formal para: ${opt}.`);
+                const waUrl = `https://wa.me/${phone}?text=${message}`;
+                const win = window.open(waUrl, '_blank');
+                if(!win || win.closed || typeof win.closed=='undefined') window.location.href = waUrl;
+            }, 15000); 
         }
 
-        initChat();
+        window.onload = loadInitialGreeting;
     </script>
 </body>
 </html>
