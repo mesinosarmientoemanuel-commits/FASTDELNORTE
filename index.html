@@ -10,8 +10,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .hero-bg {
-            background: linear-gradient(rgba(10, 15, 30, 0.85), rgba(10, 15, 30, 0.85)), 
-                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8317d?auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(10, 15, 30, 0.75), rgba(10, 15, 30, 0.75)), 
+                        url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80');
             background-size: cover; background-position: center;
         }
         #fast-chatbot { display: none; position: fixed; bottom: 30px; right: 30px; width: 380px; background: #ffffff; z-index: 10000; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; }
@@ -39,15 +39,15 @@
 
     <section class="hero-bg text-white py-32 px-6">
         <div class="container mx-auto max-w-5xl text-center">
-            <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-yellow-500 mb-4">Eficiencia Logística Total</h2>
-            <h1 class="text-5xl md:text-7xl font-black mb-6 uppercase italic leading-[0.9] tracking-tighter">
-                LÍDERES EN TRANSPORTE DE CARGA: <span class="text-yellow-500">CONECTANDO EL PAÍS CON SEGURIDAD</span>
+            <h2 class="text-sm font-bold uppercase tracking-[0.3em] text-yellow-500 mb-4">Líderes en Logística Terrestre</h2>
+            <h1 class="text-4xl md:text-6xl font-black mb-6 uppercase italic leading-[1] tracking-tighter">
+                IMPULSANDO LA CADENA DE SUMINISTRO: <span class="text-yellow-500">MOVEMOS EL FUTURO DE TU INDUSTRIA</span>
             </h1>
             <p class="text-lg md:text-xl mb-12 italic text-gray-300 max-w-2xl mx-auto border-t border-b border-yellow-500 py-4">
-                Excelencia en transporte terrestre nacional. Tecnología, seguridad y puntualidad al servicio de su cadena de suministro.
+                "Excelencia operativa y seguridad total en cada trayecto. Somos el motor que conecta sus negocios a nivel nacional."
             </p>
             <button onclick="openChat()" class="bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-black py-4 px-10 rounded-full text-sm uppercase tracking-widest transition-all hover:scale-105">
-                Consultar con Asesor
+                Consultar con un Asesor
             </button>
         </div>
     </section>
@@ -72,12 +72,12 @@
             <h3 class="text-center text-4xl font-black uppercase italic mb-16 text-slate-900">Nuestra Operación</h3>
             <div class="grid md:grid-cols-2 gap-12 justify-center">
                 <div class="group overflow-hidden rounded-2xl shadow-xl bg-white border border-slate-200">
-                    <img src="https://images.unsplash.com/photo-1580674281084-5690b2061e8b?auto=format&fit=crop&w=800&q=80" alt="Distribución" class="w-full h-72 object-cover group-hover:scale-105 transition-transform">
-                    <div class="p-8"><h4 class="font-bold text-2xl mb-2">Distribución Urbana</h4><p class="text-slate-500">Logística de última milla con eficiencia operativa y control total.</p></div>
+                    <img src="https://images.unsplash.com/photo-1578574577315-3fbc06c5434e?auto=format&fit=crop&w=800&q=80" alt="Distribución Urbana" class="w-full h-72 object-cover group-hover:scale-105 transition-transform">
+                    <div class="p-8"><h4 class="font-bold text-2xl mb-2">Distribución Urbana</h4><p class="text-slate-500">Logística eficiente de última milla con control de tiempos y entregas seguras.</p></div>
                 </div>
                 <div class="group overflow-hidden rounded-2xl shadow-xl bg-white border border-slate-200">
-                    <img src="https://images.unsplash.com/photo-1594993532334-031e42220412?auto=format&fit=crop&w=800&q=80" alt="Transporte Nacional" class="w-full h-72 object-cover group-hover:scale-105 transition-transform">
-                    <div class="p-8"><h4 class="font-bold text-2xl mb-2">Transporte Nacional</h4><p class="text-slate-500">Cobertura total a nivel nacional con tecnología de rastreo en tiempo real.</p></div>
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80" alt="Transporte Nacional" class="w-full h-72 object-cover group-hover:scale-105 transition-transform">
+                    <div class="p-8"><h4 class="font-bold text-2xl mb-2">Transporte Nacional</h4><p class="text-slate-500">Cobertura total a nivel nacional con monitoreo satelital constante.</p></div>
                 </div>
             </div>
         </div>
@@ -110,13 +110,8 @@
             </div>
             <button onclick="closeChat()" class="text-white hover:text-yellow-400 text-lg transition"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <div id="chat-content" class="chat-window">
-            <div class="msg-bot">¡Hola! Bienvenido a Fast del Norte. Somos expertos en soluciones de transporte y carga. ¿En qué podemos asesorarle hoy?</div>
-        </div>
-        <div id="chat-options" class="p-4 border-t bg-slate-50 grid grid-cols-1 gap-2">
-            <button onclick="userChoice('Cotizar')" class="w-full bg-white border border-slate-300 py-3 rounded-lg font-bold text-xs hover:border-slate-500 transition shadow-sm text-slate-700">Solicitar cotización de carga</button>
-            <button onclick="userChoice('Seguimiento')" class="w-full bg-white border border-slate-300 py-3 rounded-lg font-bold text-xs hover:border-slate-500 transition shadow-sm text-slate-700">Seguimiento de despacho</button>
-        </div>
+        <div id="chat-content" class="chat-window"></div>
+        <div id="chat-options" class="p-4 border-t bg-slate-50 grid grid-cols-1 gap-2"></div>
     </div>
 
     <footer class="bg-slate-950 text-white py-12 text-center">
@@ -128,44 +123,62 @@
         const chatContent = document.getElementById('chat-content');
         const chatOptions = document.getElementById('chat-options');
 
-        function openChat() { chatbot.style.display = 'flex'; }
+        function openChat() { 
+            chatbot.style.display = 'flex'; 
+            if (chatContent.innerHTML === '') {
+                const welcome = document.createElement('div');
+                welcome.className = 'msg-bot';
+                welcome.textContent = '¡Hola! Bienvenido a Fast del Norte. ¿En qué podemos asesorarle hoy?';
+                chatContent.appendChild(welcome);
+                renderOptions();
+            }
+        }
+
         function closeChat() { chatbot.style.display = 'none'; }
         
+        function renderOptions() {
+            chatOptions.innerHTML = '';
+            const btn1 = document.createElement('button');
+            btn1.className = 'w-full bg-white border border-slate-300 py-3 rounded-lg font-bold text-xs hover:border-slate-500 transition shadow-sm text-slate-700';
+            btn1.textContent = 'Solicitar cotización';
+            btn1.onclick = () => userChoice('Cotizar');
+            
+            const btn2 = document.createElement('button');
+            btn2.className = 'w-full bg-white border border-slate-300 py-3 rounded-lg font-bold text-xs hover:border-slate-500 transition shadow-sm text-slate-700';
+            btn2.textContent = 'Seguimiento de despacho';
+            btn2.onclick = () => userChoice('Seguimiento');
+            
+            chatOptions.appendChild(btn1);
+            chatOptions.appendChild(btn2);
+        }
+        
         function userChoice(type) {
-            // Add user message
             const userMsg = document.createElement('div');
             userMsg.className = 'msg-user';
             userMsg.textContent = type === 'Cotizar' ? 'Me interesa cotizar' : 'Quiero realizar seguimiento';
             chatContent.appendChild(userMsg);
-            
-            // Clear options
             chatOptions.innerHTML = '';
             
-            // Add typing indicator
             const typing = document.createElement('div');
             typing.className = 'msg-bot';
-            typing.textContent = 'Analizando su solicitud logística...';
+            typing.textContent = 'Consultando con un asesor técnico...';
             chatContent.appendChild(typing);
             chatContent.scrollTop = chatContent.scrollHeight;
             
             setTimeout(() => {
                 chatContent.removeChild(typing);
-                
-                // Bot response
                 const botMsg = document.createElement('div');
                 botMsg.className = 'msg-bot';
-                botMsg.textContent = 'Perfecto. Para brindarle una atención personalizada y segura, un asesor técnico le responderá por WhatsApp con todos los detalles.';
+                botMsg.textContent = 'Perfecto. Para una atención inmediata y personalizada, continúa con nuestro asesor experto a través de WhatsApp.';
                 chatContent.appendChild(botMsg);
                 
-                // WhatsApp Button
                 const waBtn = document.createElement('button');
                 waBtn.className = 'mt-2 w-full bg-green-600 text-white py-3 rounded-lg font-bold text-xs hover:bg-green-700 transition flex items-center justify-center gap-2 shadow-lg';
                 waBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i> Hablar con un asesor';
                 waBtn.onclick = () => window.open('https://wa.me/573226753828', '_blank');
                 chatOptions.appendChild(waBtn);
-                
                 chatContent.scrollTop = chatContent.scrollHeight;
-            }, 1500);
+            }, 1200);
         }
     </script>
 </body>
