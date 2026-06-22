@@ -1,147 +1,176 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transportes Fast del Norte S.A.S.</title>
+    <title>Fast del Norte S.A.S | Logística de Alta Precisión</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .bg-brand { background-color: #FFD100; }
-        .text-brand { color: #FFD100; }
-        .border-brand { border-color: #FFD100; }
-        .hidden-section { display: none; }
-        .typing-dot { animation: pulse 1.4s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .tab-section { display: none; }
+        .tab-section.active { display: grid; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .bg-yellow-brand { background-color: #FFD100; }
+        .text-yellow-brand { color: #FFD100; }
+        .border-yellow-brand { border-color: #FFD100; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-white text-slate-900">
 
-    <nav class="sticky top-0 bg-black text-white p-6 z-40 border-b-4 border-brand">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-black italic tracking-tighter">FAST DEL NORTE <span class="text-brand">S.A.S</span></h1>
-            <div class="flex space-x-6 text-xs font-bold uppercase tracking-wider">
-                <a href="#" onclick="showContent('presentacion')" class="hover:text-brand transition">Inicio</a>
-                <button onclick="showContent('nosotros')" class="hover:text-brand transition">Nosotros</button>
-                <button onclick="showContent('ofrecemos')" class="hover:text-brand transition">Ofrecemos</button>
-                <a href="#contacto" class="hover:text-brand transition">Contacto</a>
+    <nav class="sticky top-0 bg-white/95 backdrop-blur border-b border-slate-100 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-black italic tracking-tighter">FAST <span class="text-yellow-brand">DEL NORTE</span></h1>
+            <div class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest text-slate-600">
+                <a href="#inicio" class="hover:text-black transition">Inicio</a>
+                <a href="#contenidos" class="hover:text-black transition">Corporativo</a>
+                <a href="#protocolos" class="hover:text-black transition">Protocolos</a>
+                <a href="#testimonios" class="hover:text-black transition">Clientes</a>
+                <a href="#contacto" class="hover:text-black transition">Contacto</a>
             </div>
+            <a href="#contacto" class="bg-black text-white px-6 py-2 text-[10px] font-bold uppercase hover:bg-slate-800 transition rounded">Cotizar</a>
         </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-12">
-        <div id="presentacion" class="mb-16">
-            <h2 class="text-5xl font-black mb-6">Movemos tu carga, <br><span class="text-brand">protegemos tu confianza.</span></h2>
-            <p class="text-lg text-slate-600 mb-8 max-w-2xl">Soluciones de transporte terrestre confiables para empresas y personas, con cobertura nacional, cumplimiento y seguridad en cada kilómetro.</p>
+    <header id="inicio" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-yellow-brand font-bold uppercase tracking-widest text-xs mb-4">Soluciones de Transporte Integral</h2>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-none mb-8">Movemos tu carga,<br>protegemos tu confianza.</h1>
+            <p class="text-slate-400 max-w-lg text-lg font-light">Servicios de transporte terrestre de alta precisión para empresas y particulares. Tecnología de rastreo y seguridad garantizada en cada despacho.</p>
+        </div>
+    </header>
+
+    <section id="contenidos" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex space-x-8 mb-12 border-b border-slate-200">
+            <button onclick="showSection('nosotros', this)" class="nav-btn pb-4 font-black uppercase text-sm border-b-2 border-yellow-brand transition">Nosotros</button>
+            <button onclick="showSection('ofrecemos', this)" class="nav-btn pb-4 font-black uppercase text-sm border-b-2 border-transparent hover:border-slate-300 transition">Ofrecemos</button>
         </div>
 
-        <div id="nosotros" class="hidden-section mb-16 bg-white p-10 rounded-2xl border-l-8 border-brand shadow-xl">
-            <h2 class="text-3xl font-black mb-6">Nosotros</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Misión</h3>
-                    <p class="text-slate-600">Ofrecer servicios integrales de transporte terrestre, caracterizados por altos estándares de calidad, seguridad y eficiencia mediante tecnología avanzada.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-2">Visión</h3>
-                    <p class="text-slate-600">Consolidarnos en 2031 como la empresa líder en el sector del transporte terrestre en Colombia, reconocida por nuestra excelencia operativa.</p>
-                </div>
+        <div id="nosotros" class="tab-section active grid md:grid-cols-2 gap-16">
+            <div>
+                <h3 class="text-2xl font-black mb-6 uppercase tracking-tight">Misión</h3>
+                <p class="text-slate-600 leading-relaxed">Garantizar una cadena de transporte ininterrumpida, combinando eficiencia operativa con tecnología de punta para brindar tranquilidad total a nuestros clientes, tanto empresas como personas naturales, en cada kilómetro recorrido.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-black mb-6 uppercase tracking-tight">Visión</h3>
+                <p class="text-slate-600 leading-relaxed">Ser el referente nacional en servicios de transporte para 2030, reconocidos por nuestra solidez, cumplimiento impecable y una capacidad adaptativa que nos permite servir con excelencia a todo tipo de cliente en el territorio colombiano.</p>
             </div>
         </div>
 
-        <div id="ofrecemos" class="hidden-section mb-16 bg-white p-10 rounded-2xl border-l-8 border-brand shadow-xl">
-            <h2 class="text-3xl font-black mb-6">Nuestros Servicios</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-6 border rounded-xl hover:border-brand transition">
-                    <h3 class="text-2xl font-bold mb-2">🚛 Carga Nacional</h3>
-                    <p class="text-slate-600">Transporte seguro a nivel nacional con seguimiento satelital y tiempos de entrega garantizados.</p>
+        <div id="ofrecemos" class="tab-section grid md:grid-cols-2 gap-8">
+            <div class="p-10 bg-slate-50 border border-slate-100 rounded-xl">
+                <h3 class="text-2xl font-black mb-4">🚛 Carga Nacional</h3>
+                <p class="text-slate-600 mb-6">Despachos programados entre departamentos con monitoreo satelital permanente. Equipos aptos para mudanzas corporativas, mercancía industrial o necesidades particulares de gran escala.</p>
+            </div>
+            <div class="p-10 bg-slate-50 border border-slate-100 rounded-xl">
+                <h3 class="text-2xl font-black mb-4">🏙️ Carga Urbana</h3>
+                <p class="text-slate-600 mb-6">Distribución ágil en centros urbanos. Soluciones de transporte diseñadas tanto para el abastecimiento de locales comerciales como para el traslado eficiente de carga personal en ciudad.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="protocolos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-black uppercase mb-16 text-center">Protocolos de Operación</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white border border-slate-100 rounded-lg">
+                    <h4 class="font-bold mb-2">Monitoreo 24/7</h4>
+                    <p class="text-sm text-slate-500">Seguimiento satelital en tiempo real para asegurar el control total de cada unidad en ruta.</p>
                 </div>
-                <div class="p-6 border rounded-xl hover:border-brand transition">
-                    <h3 class="text-2xl font-bold mb-2">🏙️ Carga Urbana</h3>
-                    <p class="text-slate-600">Distribución local ágil para última milla, garantizando entregas empresariales eficientes.</p>
+                <div class="p-8 bg-white border border-slate-100 rounded-lg">
+                    <h4 class="font-bold mb-2">Seguridad Física</h4>
+                    <p class="text-sm text-slate-500">Estrictos protocolos de verificación de carga y seguridad en cada trayecto, sin excepciones.</p>
+                </div>
+                <div class="p-8 bg-white border border-slate-100 rounded-lg">
+                    <h4 class="font-bold mb-2">Gestión Documental</h4>
+                    <p class="text-sm text-slate-500">Digitalización de soportes y pruebas de entrega para garantizar la transparencia en cada servicio.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="mb-16">
-            <h2 class="text-3xl font-black mb-8 text-center">Lo que dicen nuestros clientes</h2>
+    <section id="testimonios" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-black uppercase mb-16 text-center">Lo que dicen nuestros clientes</h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 shadow-sm border rounded-lg">
-                    <div class="text-brand mb-2">★★★★★</div>
-                    <p class="italic text-sm">"Servicio impecable. La mercancía llegó intacta y a tiempo a Medellín."</p>
-                    <p class="font-bold text-xs mt-4">JORGE PÉREZ - BARRANQUILLA</p>
+                <div class="p-8 border border-slate-100 rounded-lg bg-slate-50">
+                    <p class="text-sm italic mb-6 text-slate-600">"La precisión en los tiempos de entrega de Fast del Norte ha sido clave para nuestra cadena de suministro corporativa."</p>
+                    <span class="font-bold text-xs uppercase text-yellow-brand">Dir. Logístico - Indutrade S.A.</span>
                 </div>
-                <div class="bg-white p-6 shadow-sm border rounded-lg">
-                    <div class="text-brand mb-2">★★★★★</div>
-                    <p class="italic text-sm">"La mejor empresa de carga. Cumplimiento total en nuestras entregas."</p>
-                    <p class="font-bold text-xs mt-4">MARÍA LÓPEZ - BOGOTÁ</p>
+                <div class="p-8 border border-slate-100 rounded-lg bg-slate-50">
+                    <p class="text-sm italic mb-6 text-slate-600">"Transportaron toda nuestra carga personal con un cuidado y una puntualidad que no había visto antes."</p>
+                    <span class="font-bold text-xs uppercase text-yellow-brand">Cliente Particular - Medellín</span>
                 </div>
-                <div class="bg-white p-6 shadow-sm border rounded-lg">
-                    <div class="text-brand mb-2">★★★★★</div>
-                    <p class="italic text-sm">"Excelente logística, siempre nos mantienen informados de la ruta."</p>
-                    <p class="font-bold text-xs mt-4">CARLOS MENDOZA - CALI</p>
-                </div>
-                <div class="bg-white p-6 shadow-sm border rounded-lg">
-                    <div class="text-brand mb-2">★★★★★</div>
-                    <p class="italic text-sm">"Muy profesionales. Los conductores están muy bien capacitados."</p>
-                    <p class="font-bold text-xs mt-4">SOFÍA RIVERA - CARTAGENA</p>
-                </div>
-                <div class="bg-white p-6 shadow-sm border rounded-lg">
-                    <div class="text-brand mb-2">★★★★★</div>
-                    <p class="italic text-sm">"Socio estratégico fundamental para nuestra distribución local."</p>
-                    <p class="font-bold text-xs mt-4">ANDRÉS VALDÉS - BARRANQUILLA</p>
+                <div class="p-8 border border-slate-100 rounded-lg bg-slate-50">
+                    <p class="text-sm italic mb-6 text-slate-600">"Profesionalismo desde la cotización hasta la descarga final. Un aliado estratégico de alto nivel."</p>
+                    <span class="font-bold text-xs uppercase text-yellow-brand">Jefe de Distribución - Alimentos Valle</span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div id="contacto" class="bg-black text-white p-10 rounded-2xl">
-            <h2 class="text-3xl font-black mb-4">Ubicación</h2>
-            <p>Calle 70 Vía 40, Barranquilla, Atlántico, Colombia.</p>
+    <footer id="contacto" class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black mb-8">Oficinas Centrales</h2>
+            <div class="p-8 border border-slate-800 inline-block mb-12 rounded bg-slate-900">
+                <p class="text-xl font-bold">Calle 70 Vía 40, Barranquilla, Atlántico.</p>
+                <p class="text-sm text-slate-400 mt-2">Atención para empresas y particulares</p>
+            </div>
+            <p class="text-slate-600 text-[10px] uppercase tracking-widest">© 2026 Fast del Norte S.A.S - Todos los derechos reservados.</p>
         </div>
-    </main>
+    </footer>
 
-    <button onclick="toggleChat()" class="fixed bottom-6 right-6 bg-black text-brand p-4 rounded-full shadow-2xl border-2 border-brand z-50">
-        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+    <button onclick="toggleChat()" class="fixed bottom-6 right-6 bg-yellow-brand p-4 rounded-full shadow-lg z-50 hover:scale-105 transition hover:shadow-xl">
+        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg>
     </button>
 
-    <div id="chat-window" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-2xl shadow-2xl border z-50">
-        <div class="bg-black text-white p-4 font-bold flex justify-between items-center rounded-t-2xl">
-            <span>Laura - Asistente</span>
-            <button onclick="toggleChat()" class="text-brand hover:text-white">✕</button>
+    <div id="chat-window" class="hidden fixed bottom-24 right-6 w-80 bg-white border border-slate-200 shadow-2xl z-50 rounded-2xl overflow-hidden transition-all duration-300">
+        <div class="bg-black text-white p-4 flex justify-between items-center">
+            <span class="text-xs font-bold uppercase">Asistente - Laura</span>
+            <button onclick="closeChat()" class="text-slate-400 hover:text-white font-bold px-2 py-1">✕</button>
         </div>
-        <div id="chat-body" class="p-4 h-64 overflow-y-auto bg-slate-50 text-sm space-y-3">
-            <div class="bg-white p-3 rounded shadow-sm">👋 ¡Hola! Soy Laura. ¿En qué te ayudo hoy?</div>
+        <div id="chat-body" class="p-4 h-64 overflow-y-auto space-y-4 bg-slate-50 text-sm">
+            <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-100 text-slate-800">¡Hola! Soy Laura. Estoy lista para gestionar tu transporte, ya sea para tu empresa o necesidades personales. ¿En qué puedo ayudarte hoy?</div>
         </div>
-        <div id="chat-options" class="p-3 border-t grid grid-cols-1 gap-2">
-            <button onclick="sendOption('Carga Nacional')" class="bg-brand p-2 font-bold text-xs rounded hover:bg-yellow-400">🚛 Carga Nacional</button>
-            <button onclick="sendOption('Carga Urbana')" class="bg-brand p-2 font-bold text-xs rounded hover:bg-yellow-400">🏙️ Carga Urbana</button>
-            <button onclick="sendOption('Asesor')" class="bg-brand p-2 font-bold text-xs rounded hover:bg-yellow-400">📞 Hablar con un asesor</button>
+        <div class="p-3 border-t border-slate-100 grid gap-2">
+            <button onclick="sendOption('Carga Nacional')" class="bg-black text-white text-[10px] font-bold p-2 uppercase hover:bg-slate-800 rounded transition">🚛 Cotizar Carga Nacional</button>
+            <button onclick="sendOption('Carga Urbana')" class="bg-black text-white text-[10px] font-bold p-2 uppercase hover:bg-slate-800 rounded transition">🏙️ Cotizar Carga Urbana</button>
         </div>
     </div>
 
     <script>
-        function showContent(id) {
-            document.getElementById('nosotros').classList.add('hidden-section');
-            document.getElementById('ofrecemos').classList.add('hidden-section');
-            document.getElementById('presentacion').classList.remove('hidden-section');
-            
-            if(id !== 'presentacion') {
-                document.getElementById(id).classList.remove('hidden-section');
-                document.getElementById('presentacion').classList.add('hidden-section');
-            }
+        function showSection(id, btn) {
+            document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.nav-btn').forEach(b => {
+                b.classList.remove('border-yellow-brand', 'font-bold');
+                b.classList.add('border-transparent');
+            });
+            btn.classList.add('border-yellow-brand', 'font-bold');
         }
 
-        const chatWindow = document.getElementById('chat-window');
-        function toggleChat() { chatWindow.classList.toggle('hidden'); }
-
+        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+        
+        function closeChat() {
+            document.getElementById('chat-window').classList.add('hidden');
+            // Reset chat history to initial state
+            const body = document.getElementById('chat-body');
+            body.innerHTML = `<div class="bg-white p-3 rounded-lg shadow-sm border border-slate-100 text-slate-800">¡Hola! Soy Laura. Estoy lista para gestionar tu transporte, ya sea para tu empresa o necesidades personales. ¿En qué puedo ayudarte hoy?</div>`;
+        }
+        
         function sendOption(opt) {
             const body = document.getElementById('chat-body');
-            body.innerHTML += `<div class="bg-brand p-3 rounded ml-auto w-fit text-xs font-bold">${opt}</div>`;
+            body.innerHTML += `<div class="bg-yellow-brand text-black p-3 rounded-lg ml-auto w-fit text-[10px] font-bold">${opt}</div>`;
+            body.innerHTML += `<div id="typing" class="text-slate-400 text-[10px] italic animate-pulse">Laura está escribiendo...</div>`;
+            body.scrollTop = body.scrollHeight;
             
             setTimeout(() => {
-                const link = `https://wa.me/573226753828?text=${encodeURIComponent("Hola, me interesa: " + opt)}`;
-                body.innerHTML += `<div class="bg-white p-3 rounded shadow-sm text-xs">Entendido. Te conecto con un asesor para ${opt}. <a href="${link}" target="_blank" class="block bg-black text-brand font-bold p-2 mt-2 text-center rounded">Abrir WhatsApp</a></div>`;
+                const typing = document.getElementById('typing');
+                if(typing) typing.remove();
+                const link = `https://wa.me/573226753828?text=${encodeURIComponent("Hola, me interesa información sobre: " + opt)}`;
+                body.innerHTML += `<div class="bg-white p-3 rounded-lg shadow-sm border border-slate-100 text-xs">Claro, con gusto te brindamos más información sobre <b>${opt}</b>.<br><br><a href="${link}" target="_blank" class="text-yellow-brand font-black underline">Hablar por WhatsApp</a></div>`;
                 body.scrollTop = body.scrollHeight;
-            }, 800);
+            }, 1000);
         }
     </script>
 </body>
