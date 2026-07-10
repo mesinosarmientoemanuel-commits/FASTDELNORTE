@@ -1,537 +1,261 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <!-- STREAMING_CHUNK:Configuring system head, responsive viewport, and custom styles... -->
+    <!-- STREAMING_CHUNK:Configuring system head, responsive viewport, and extensive styles... -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transportes Fast del Norte S.A.S. | Carga General Urbana</title>
+    <title>Transportes Fast del Norte S.A.S. | Carga General y Logística</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hero-overlay { background: rgba(0, 0, 0, 0.75); }
-        
-        /* Animación de escritura de Laura */
-        .typing-dot {
-            animation: typingBounce 1.4s infinite both;
-        }
-        .typing-dot:nth-child(2) { animation-delay: .2s; }
-        .typing-dot:nth-child(3) { animation-delay: .4s; }
-        @keyframes typingBounce {
-            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
-            40% { transform: scale(1); opacity: 1; }
-        }
-        
-        /* Scrollbar del chat interno */
-        .chat-scroll::-webkit-scrollbar {
-            width: 6px;
-        }
-        .chat-scroll::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .chat-scroll::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-        }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.65)); }
+        .chat-scroll::-webkit-scrollbar { width: 6px; }
+        .chat-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+        .chat-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+        .service-card:hover { transform: translateY(-8px); border-color: #eab308; }
+        .transition-all { transition: all 0.4s ease; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 leading-relaxed relative">
+<body class="bg-slate-50 text-slate-900">
 
-    <!-- STREAMING_CHUNK:Rendering global navigation header... -->
-    <!-- Navegación Principal -->
-    <nav class="sticky top-0 bg-white/95 backdrop-blur-md z-50 px-6 py-4 border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- STREAMING_CHUNK:Rendering navigation header... -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-lg z-50 border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-black tracking-tighter uppercase text-black">
-                FAST <span class="text-yellow-500">DEL NORTE</span>
+                FAST <span class="text-yellow-600">DEL NORTE</span>
             </div>
-            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-600">
+            <div class="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-700">
                 <a href="#inicio" class="hover:text-yellow-600 transition-colors">Inicio</a>
-                <a href="#asistente-seccion" class="hover:text-yellow-600 transition-colors">Asistente Virtual</a>
-                <a href="#servicios" class="hover:text-yellow-600 transition-colors">Carga General</a>
-                <a href="#flota" class="hover:text-yellow-600 transition-colors">Nuestra Flota</a>
-                <a href="#valores" class="hover:text-yellow-600 transition-colors">Valores</a>
-                <a href="#testimonios" class="hover:text-yellow-600 transition-colors">Aliados</a>
+                <a href="#nosotros" class="hover:text-yellow-600 transition-colors">Nosotros</a>
+                <a href="#servicios" class="hover:text-yellow-600 transition-colors">Servicios</a>
+                <a href="#proceso" class="hover:text-yellow-600 transition-colors">Procesos</a>
+                <a href="#asistente" class="hover:text-yellow-600 font-bold text-yellow-600 border-b-2 border-yellow-600 pb-1">Cotizar</a>
+                <a href="#alianzas" class="hover:text-yellow-600 transition-colors">Aliados</a>
             </div>
         </div>
     </nav>
 
-    <!-- STREAMING_CHUNK:Building hero section with background and the main slogan... -->
-    <!-- Hero / Entrada con Imagen de Logística y Eslogan de Impacto -->
-    <header id="inicio" class="relative w-full min-h-[600px] flex items-center justify-center text-center px-6 bg-slate-950">
-        <!-- Imagen de fondo de logística comercial -->
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1600');">
-            <div class="absolute inset-0 hero-overlay"></div>
+    <!-- STREAMING_CHUNK:Building the primary hero section... -->
+    <header id="inicio" class="relative w-full min-h-[750px] flex items-center justify-center text-center px-6 bg-slate-950 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" alt="Transporte de carga" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 hero-gradient"></div>
         </div>
         <div class="relative z-10 max-w-5xl mx-auto text-white">
-            <span class="text-xs md:text-sm font-bold text-yellow-500 uppercase tracking-[0.4em] mb-4 inline-block">Transportes Fast del Norte S.A.S.</span>
-            <!-- Eslogan Premium enfocado en Carga General Urbana -->
-            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-[1.15] tracking-tight">
-                La forma más rápida y segura de mover<br class="hidden md:block">
-                <span class="text-yellow-500 font-extrabold">tu carga general por toda Barranquilla</span>
+            <span class="text-xs md:text-sm font-bold text-yellow-500 uppercase tracking-[0.4em] mb-6 inline-block">Transportes Fast del Norte S.A.S.</span>
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-[1] tracking-tighter">
+                Logística y <span class="text-yellow-500 font-extrabold">Carga General</span><br>
+                <span class="text-3xl md:text-5xl opacity-80 mt-4 block">en el corazón de Barranquilla</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light">
-                Movilidad ágil y eficiente en toda el área metropolitana. Transportamos tu mercancía de manera segura, limpia y ordenada con el cuidado que tu negocio exige.
+            <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-2xl mx-auto font-light">
+                Más que transporte, somos el motor logístico de tu empresa. Garantizamos puntualidad, seguridad y transparencia en cada recorrido por la ciudad y el área metropolitana.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#asistente-seccion" class="bg-yellow-500 text-black font-bold px-8 py-4 uppercase text-xs tracking-widest hover:bg-white transition-all shadow-lg hover:shadow-yellow-500/20 rounded-lg">
-                    Chatear con el Asistente
-                </a>
-                <a href="#flota" class="border border-white/30 hover:border-white text-white font-bold px-8 py-4 uppercase text-xs tracking-widest transition-all rounded-lg">
-                    Ver Vehículos
+                <a href="#asistente" class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold px-10 py-5 uppercase text-xs tracking-widest transition-all rounded-lg shadow-xl">
+                    Inicia tu cotización
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- STREAMING_CHUNK:Designing the streamlined chatbot simulator... -->
-    <!-- SECCIÓN DEL ASISTENTE: Chatbot Conversacional Interactivo Simplificado -->
-    <section id="asistente-seccion" class="py-20 bg-white border-b border-slate-200 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-10">
-                <span class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-2 inline-block">Cotización Express</span>
-                <h2 class="text-3xl font-black text-slate-900">Conversa con Laura, tu Asistente Logística</h2>
-                <p class="text-slate-500 mt-2 text-sm">Responde dos preguntas muy básicas y te contactamos de inmediato al WhatsApp con nuestro asesor de fletes.</p>
-            </div>
-
-            <!-- Panel de Chat Integrado -->
-            <div class="bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-800 flex flex-col md:flex-row h-[500px]">
-                
-                <!-- Lateral de Información del Asistente -->
-                <div class="bg-black p-6 md:w-1/3 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800 text-center md:text-left shrink-0">
-                    <div class="space-y-4">
-                        <div class="w-16 h-16 bg-yellow-500 rounded-full mx-auto md:mx-0 flex items-center justify-center font-black text-black text-2xl shadow-lg border-2 border-white relative">
-                            L
-                            <span class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-black rounded-full"></span>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-base">Asistente Laura</h4>
-                            <p class="text-yellow-500 text-xs uppercase tracking-wider font-semibold">Carga General Urbana</p>
-                        </div>
-                        <p class="text-slate-400 text-xs leading-relaxed font-light">
-                            Hola, soy Laura. ¿Deseas cotizar un flete de carga general urbana dentro de Barranquilla? Haz la prueba conversando conmigo.
-                        </p>
+    <!-- STREAMING_CHUNK:Structuring About Us (Misión/Visión) section... -->
+    <section id="nosotros" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-8">Nuestra Identidad Corporativa</h2>
+                    <p class="text-slate-600 mb-6 text-lg">Transportes Fast del Norte S.A.S. nació de la necesidad de ofrecer soluciones logísticas urbanas que combinen agilidad operativa con un estricto cumplimiento de los estándares de seguridad.</p>
+                    <p class="text-slate-600 text-lg">Nos enfocamos en el servicio de carga general para medianas y grandes empresas, asegurando que cada envío sea gestionado con la máxima profesionalidad.</p>
+                </div>
+                <div class="grid gap-6">
+                    <div class="bg-slate-50 p-8 rounded-2xl border-l-4 border-yellow-600 shadow-sm">
+                        <h3 class="text-xl font-black mb-3">Misión</h3>
+                        <p class="text-slate-600 leading-relaxed italic">"Brindar servicios de transporte de carga general en el área metropolitana de Barranquilla, mediante procesos ágiles y seguros, contribuyendo al crecimiento de nuestros aliados comerciales mediante la excelencia en la ejecución."</p>
                     </div>
-                    
-                    <!-- Botón de Reiniciar -->
-                    <div class="pt-4 border-t border-slate-800">
-                        <button onclick="reiniciarConversacionLocal()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md">
-                            🗑️ Reiniciar / Borrar Chat
-                        </button>
+                    <div class="bg-slate-50 p-8 rounded-2xl border-l-4 border-yellow-600 shadow-sm">
+                        <h3 class="text-xl font-black mb-3">Visión</h3>
+                        <p class="text-slate-600 leading-relaxed italic">"Ser el aliado logístico de referencia en la región Caribe para 2030, reconocidos por la optimización de nuestras rutas, la calidad de nuestro equipo humano y nuestra capacidad de adaptación ante los desafíos tecnológicos del sector transporte."</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Ventana de Mensajes y Caja de Texto -->
-                <div class="flex-1 flex flex-col bg-slate-950 justify-between">
-                    
-                    <!-- Historial de Conversación -->
-                    <div id="conversacion-box" class="p-6 overflow-y-auto space-y-4 flex-1 text-xs chat-scroll">
-                        <!-- Primer mensaje inicial de Laura -->
-                        <div class="flex gap-3">
-                            <div class="w-8 h-8 rounded-full bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0">L</div>
-                            <div class="bg-slate-800 text-slate-100 p-4 rounded-xl max-w-[85%] shadow-md">
-                                <p class="font-bold text-yellow-400 mb-1">¡Hola! Soy Laura. 👋</p>
-                                <p class="text-slate-200">¿Cómo te puedo colaborar hoy? Puedes escribir libremente en el chat de abajo o pulsar este botón para iniciar la cotización express:</p>
-                                
-                                <div class="mt-4">
-                                    <button onclick="conversarOpcion('cotizar')" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black p-3 rounded-lg text-left font-bold transition-all shadow-sm">
-                                        📋 Iniciar Preguntas Rápidas
-                                    </button>
-                                </div>
+    <!-- STREAMING_CHUNK:Structuring detailed services section... -->
+    <section id="servicios" class="py-24 bg-slate-100 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4">Nuestros Servicios Profesionales</h2>
+                <p class="text-slate-500">Soluciones integrales de carga diseñadas para la dinámica de Barranquilla.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-10 rounded-xl border border-slate-200 transition-all">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center font-black text-2xl mb-8">01</div>
+                    <h4 class="text-xl font-bold mb-4 text-black uppercase tracking-wide">Distribución Capilar</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">Gestionamos la entrega detallada de productos en puntos de venta y centros comerciales del área metropolitana.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-10 rounded-xl border border-slate-200 transition-all">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center font-black text-2xl mb-8">02</div>
+                    <h4 class="text-xl font-bold mb-4 text-black uppercase tracking-wide">Carga de Manufactura</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">Transporte de materias primas y bienes terminados bajo estrictos protocolos de manejo y seguridad documental.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-10 rounded-xl border border-slate-200 transition-all">
+                    <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center font-black text-2xl mb-8">03</div>
+                    <h4 class="text-xl font-bold mb-4 text-black uppercase tracking-wide">Logística Comercial</h4>
+                    <p class="text-slate-600 leading-relaxed text-sm">Apoyo integral en la cadena de suministro, desde el recolección hasta la entrega final al cliente mayorista o minorista.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STREAMING_CHUNK:Structuring Chatbot (Laura) Section... -->
+    <section id="asistente" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-yellow-600 font-bold uppercase tracking-widest text-xs">Asistencia 24/7</span>
+                <h2 class="text-4xl font-black mt-2">Laura, tu Asistente Logística</h2>
+                <p class="text-slate-500 mt-2">Inicia una cotización en tiempo real y recibe respuesta inmediata en WhatsApp.</p>
+            </div>
+            <div class="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-800 flex flex-col md:flex-row h-[600px]">
+                <!-- Sidebar -->
+                <div class="bg-black p-8 md:w-80 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800">
+                    <div>
+                        <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center font-black text-black text-2xl shadow-lg mb-6">L</div>
+                        <h4 class="text-white font-bold text-lg mb-2">Asistente Laura</h4>
+                        <p class="text-slate-500 text-xs uppercase tracking-widest leading-relaxed">Fast del Norte S.A.S.</p>
+                    </div>
+                    <button onclick="location.reload()" class="bg-red-900/30 hover:bg-red-900 text-red-200 py-3 rounded-lg text-xs font-bold uppercase transition-all">Reiniciar Conversación</button>
+                </div>
+                <!-- Main Chat -->
+                <div class="flex-1 flex flex-col bg-slate-950">
+                    <div id="chat-box" class="flex-1 p-8 overflow-y-auto space-y-6 chat-scroll">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-600 shrink-0 flex items-center justify-center font-bold text-xs text-black">L</div>
+                            <div class="bg-slate-800 p-5 rounded-2xl rounded-tl-none shadow-sm text-slate-200 text-sm leading-relaxed max-w-lg">
+                                ¡Hola! 👋 Soy Laura. Estoy aquí para ayudarte a obtener una cotización rápida para tu carga. ¿Cómo es tu nombre?
                             </div>
                         </div>
                     </div>
-
-                    <!-- Input / Caja de Escritura Real -->
-                    <div class="p-4 bg-slate-900 border-t border-slate-800">
-                        <form id="chat-form" onsubmit="enviarMensajeUsuario(event)" class="flex gap-2">
-                            <input type="text" id="chat-input" placeholder="Escribe tu mensaje... (ej: hola, qué llevan, precio)" 
-                                   class="flex-1 bg-slate-950 text-white placeholder-slate-500 text-xs px-4 py-3 rounded-xl border border-slate-700 focus:outline-none focus:border-yellow-500 transition-all">
-                            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-5 py-3 rounded-xl text-xs transition-all flex items-center justify-center">
-                                Enviar
-                            </button>
-                        </form>
-                    </div>
-
+                    <form onsubmit="manejarChat(event)" class="p-6 bg-slate-900 border-t border-slate-800 flex gap-4">
+                        <input id="chat-input" required class="flex-1 bg-slate-950 border border-slate-700 text-white p-4 rounded-xl focus:outline-none focus:border-yellow-600 transition-all text-sm" placeholder="Escribe tu mensaje aquí...">
+                        <button class="bg-yellow-600 hover:bg-yellow-500 text-white font-bold px-8 rounded-xl transition-all">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STREAMING_CHUNK:Structuring services focused entirely on Carga General -->
-    <!-- Sección de Carga General (Enfoque Exclusivo) -->
-    <section id="servicios" class="py-24 bg-slate-100 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-4 inline-block">Nuestra Especialidad</span>
-            <h2 class="text-4xl font-extrabold mb-8 text-black">Servicio Especializado de Carga General</h2>
-            
-            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-12">
-                Nos dedicamos de manera exclusiva al transporte de <strong>carga general urbana</strong>. Esto abarca todo tipo de mercancías procesadas, empaquetadas, estibadas o embaladas que requieren un traslado higiénico, ordenado y seguro por las calles de la ciudad sin riesgos de daños o exposición a la intemperie.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <!-- Tarjeta de Producto Embalado -->
-                <div class="bg-white p-8 border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <div class="bg-yellow-100 text-yellow-600 w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg mb-6">📦</div>
-                    <h4 class="text-lg font-bold mb-3 text-black">Mercancía y Embalajes</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">Cajas, pallets, bobinas, bidones y paquetes de cualquier tamaño. Adaptamos el cubicaje de nuestros furgones para transportar todo tipo de embalajes de manera óptima.</p>
+    <!-- STREAMING_CHUNK:Structuring Partners (Aliados) section... -->
+    <section id="alianzas" class="py-24 bg-slate-900 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-black text-white mb-16 uppercase tracking-widest">Nuestros Aliados Estratégicos</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white/5 py-12 rounded-xl border border-white/5 hover:border-yellow-600 transition-all">
+                    <div class="text-white font-black text-xl">GLOBAL CARGO</div>
+                    <div class="text-slate-500 text-xs mt-2 uppercase tracking-widest">Logística Global</div>
                 </div>
-
-                <!-- Tarjeta de Distribución Comercial -->
-                <div class="bg-white p-8 border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <div class="bg-yellow-100 text-yellow-600 w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg mb-6">🏪</div>
-                    <h4 class="text-lg font-bold mb-3 text-black">Suministro Comercial</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">Abastecimiento continuo a tiendas de retail, supermercados, puntos de venta y centros comerciales con un flujo logístico constante y coordinado.</p>
+                <div class="bg-white/5 py-12 rounded-xl border border-white/5 hover:border-yellow-600 transition-all">
+                    <div class="text-white font-black text-xl">PUERTO SUR</div>
+                    <div class="text-slate-500 text-xs mt-2 uppercase tracking-widest">Distribución Marítima</div>
                 </div>
-
-                <!-- Tarjeta de Productos Terminados -->
-                <div class="bg-white p-8 border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <div class="bg-yellow-100 text-yellow-600 w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg mb-6">⚙️</div>
-                    <h4 class="text-lg font-bold mb-3 text-black">Materiales y Manufactura</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">Envío ágil de productos manufacturados, componentes de ensamble, repuestos e insumos industriales de carga general de manera impecable.</p>
+                <div class="bg-white/5 py-12 rounded-xl border border-white/5 hover:border-yellow-600 transition-all">
+                    <div class="text-white font-black text-xl">NORTE CARGA</div>
+                    <div class="text-slate-500 text-xs mt-2 uppercase tracking-widest">Transito Urbano</div>
+                </div>
+                <div class="bg-white/5 py-12 rounded-xl border border-white/5 hover:border-yellow-600 transition-all">
+                    <div class="text-white font-black text-xl">TRANSVÍA</div>
+                    <div class="text-slate-500 text-xs mt-2 uppercase tracking-widest">Suministros Industriales</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STREAMING_CHUNK:Rendering real fleet images with correct and accurate relative links -->
-    <!-- Sección de Flota Real -->
-    <section id="flota" class="py-24 max-w-7xl mx-auto px-6 bg-white border-b border-slate-200">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-3">Equipo de Trabajo</h2>
-            <h3 class="text-3xl md:text-4xl font-black">Nuestra Flota Urbana</h3>
-            <p class="text-slate-500 mt-4">Unidades de furgón cerradas y optimizadas para la protección integral de toda tu carga general en cualquier condición climática.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Camión Hino (Liviano) -->
-            <div class="group overflow-hidden border border-slate-100 p-4 bg-slate-50 rounded-xl shadow-sm">
-                <div class="overflow-hidden bg-white flex items-center justify-center h-96 rounded-lg border border-slate-200">
-                    <img src="412-4121223_diseamos-contenedores-segn-su-carga-camion-hino.jpg" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516576885502-d4c339735533?auto=format&fit=crop&q=80&w=800';" 
-                         class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105" 
-                         alt="Camión Hino para transporte de carga general en Barranquilla">
-                </div>
-                <div class="mt-6 text-center">
-                    <h4 class="font-extrabold text-lg text-slate-900 uppercase tracking-wider">Unidad Furgón Liviano (HINO)</h4>
-                    <p class="text-slate-500 text-xs mt-1">Perfecto para calles estrechas, distribución capilar y entregas de última milla de carga general.</p>
+    <!-- STREAMING_CHUNK:Structuring Footer section... -->
+    <footer class="bg-black py-20 px-6 text-white border-t border-yellow-600">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
+            <div>
+                <div class="text-2xl font-black uppercase mb-6">FAST <span class="text-yellow-500">DEL NORTE</span></div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Soluciones logísticas de alta eficiencia en el corazón de Barranquilla. Tu carga es nuestra prioridad.</p>
+                <div class="flex gap-4">
+                    <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-yellow-500">FB</div>
+                    <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-yellow-500">IN</div>
+                    <div class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-yellow-500">TW</div>
                 </div>
             </div>
-
-            <!-- Camión Foton (Mediano) -->
-            <div class="group overflow-hidden border border-slate-100 p-4 bg-slate-50 rounded-xl shadow-sm">
-                <div class="overflow-hidden bg-white flex items-center justify-center h-96 rounded-lg border border-slate-200">
-                    <img src="furgones-carga-seca-leon-1.jpg" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516576885502-d4c339735533?auto=format&fit=crop&q=80&w=800';" 
-                         class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105" 
-                         alt="Camión Foton para flete de carga general">
-                </div>
-                <div class="mt-6 text-center">
-                    <h4 class="font-extrabold text-lg text-slate-900 uppercase tracking-wider">Unidad Furgón Mediano (FOTON)</h4>
-                    <p class="text-slate-500 text-xs mt-1">Cubicaje ideal y robustez total para el movimiento de altos volúmenes de carga general.</p>
-                </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 text-yellow-500">Ubicación Estratégica</h4>
+                <p class="text-slate-300 mb-2">Oficina Principal:</p>
+                <p class="font-bold text-white mb-6">Calle 70 # Vía 40<br>Barranquilla, Colombia</p>
+                <p class="text-slate-400 text-sm">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                <p class="text-slate-400 text-sm">Sábados: 8:00 AM - 1:00 PM</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 text-yellow-500">Enlaces Rápidos</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li><a href="#inicio" class="hover:text-yellow-500">Inicio</a></li>
+                    <li><a href="#nosotros" class="hover:text-yellow-500">Nosotros</a></li>
+                    <li><a href="#servicios" class="hover:text-yellow-500">Nuestros Servicios</a></li>
+                    <li><a href="#asistente" class="hover:text-yellow-500">Cotización Express</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- STREAMING_CHUNK:Structuring corporate values section -->
-    <!-- Valores Corporativos -->
-    <section id="valores" class="py-24 bg-white border-b border-slate-100 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-3">La base de nuestra operación</h2>
-                <h3 class="text-3xl md:text-4xl font-black">Valores Corporativos</h3>
-                <p class="text-slate-500 mt-4">Nuestra conducta empresarial se rige bajo pilares estrictos de cumplimiento para garantizar una experiencia de logística urbana inigualable.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                <!-- Valor 1 -->
-                <div class="bg-slate-50 p-8 border-t-4 border-yellow-500 hover:shadow-lg transition-all rounded-b-lg">
-                    <div class="text-yellow-500 mb-4 text-3xl font-black">01</div>
-                    <h4 class="font-bold text-base uppercase mb-3 text-slate-950">Puntualidad</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Entendemos el valor del tiempo en la ciudad. Planificamos rutas inteligentes para asegurar entregas en el momento exacto solicitado.</p>
-                </div>
-                <!-- Valor 2 -->
-                <div class="bg-slate-50 p-8 border-t-4 border-yellow-500 hover:shadow-lg transition-all rounded-b-lg">
-                    <div class="text-yellow-500 mb-4 text-3xl font-black">02</div>
-                    <h4 class="font-bold text-base uppercase mb-3 text-slate-950">Seguridad</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Monitoreamos de forma activa cada viaje dentro del casco urbano para que tu mercancía general llegue intacta y protegida.</p>
-                </div>
-                <!-- Valor 3 -->
-                <div class="bg-slate-50 p-8 border-t-4 border-yellow-500 hover:shadow-lg transition-all rounded-b-lg">
-                    <div class="text-yellow-500 mb-4 text-3xl font-black">03</div>
-                    <h4 class="font-bold text-base uppercase mb-3 text-slate-950">Innovación</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Adaptamos nuevas tecnologías aplicadas al transporte urbano para optimizar los consumos de combustible, tiempos y procesos de rastreo local.</p>
-                </div>
-                <!-- Valor 4 -->
-                <div class="bg-slate-50 p-8 border-t-4 border-yellow-500 hover:shadow-lg transition-all rounded-b-lg">
-                    <div class="text-yellow-500 mb-4 text-3xl font-black">04</div>
-                    <h4 class="font-bold text-base uppercase mb-3 text-slate-950">Integridad</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Brindamos una gestión transparente, responsable y honesta con todos nuestros clientes, aliados y colaboradores.</p>
-                </div>
-                <!-- Valor 5 -->
-                <div class="bg-slate-50 p-8 border-t-4 border-yellow-500 hover:shadow-lg transition-all rounded-b-lg">
-                    <div class="text-yellow-500 mb-4 text-3xl font-black">05</div>
-                    <h4 class="font-bold text-base uppercase mb-3 text-slate-950">Compromiso</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Nos apropiamos de los desafíos de tu negocio local como si fueran propios, asegurando un nivel de dedicación excepcional en cada entrega urbana.</p>
-                </div>
-            </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-900 text-center text-slate-600 text-xs uppercase tracking-widest">
+            Transportes Fast del Norte S.A.S. © 2026 - Todos los derechos reservados.
         </div>
-    </section>
-
-    <!-- STREAMING_CHUNK:Listing real customer testimonials... -->
-    <!-- 5 Testimonios de Clientes -->
-    <section id="testimonios" class="py-24 bg-slate-900 text-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-yellow-500 uppercase tracking-[0.3em] mb-3 inline-block">Testimonios de Confianza</span>
-                <h3 class="text-3xl md:text-4xl font-extrabold">Lo que dicen nuestros aliados locales</h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                <!-- Testimonio 1 -->
-                <div class="bg-slate-800/80 p-6 flex flex-col justify-between border-b-4 border-yellow-500 shadow-lg rounded-lg">
-                    <p class="italic text-slate-300 text-xs leading-relaxed mb-6">"La puntualidad y cuidado de nuestra carga general ha sido insuperable en los despachos diarios dentro de Barranquilla."</p>
-                    <div>
-                        <p class="font-bold text-xs uppercase tracking-widest text-yellow-500">Retail Atlántico</p>
-                        <p class="text-[10px] text-slate-400">Distribución de Consumo</p>
-                    </div>
-                </div>
-                <!-- Testimonio 2 -->
-                <div class="bg-slate-800/80 p-6 flex flex-col justify-between border-b-4 border-yellow-500 shadow-lg rounded-lg">
-                    <p class="italic text-slate-300 text-xs leading-relaxed mb-6">"Conductores altamente calificados que conocen perfectamente las rutas metropolitanas. Seguridad total en cada entrega."</p>
-                    <div>
-                        <p class="font-bold text-xs uppercase tracking-widest text-yellow-500">Industria Local</p>
-                        <p class="text-[10px] text-slate-400">Suministros Metalmecánicos</p>
-                    </div>
-                </div>
-                <!-- Testimonio 3 -->
-                <div class="bg-slate-800/80 p-6 flex flex-col justify-between border-b-4 border-yellow-500 shadow-lg rounded-lg">
-                    <p class="italic text-slate-300 text-xs leading-relaxed mb-6">"La comunicación y seguimiento es excelente. Siempre sabemos el estado y la hora estimada de llegada de nuestra mercancía."</p>
-                    <div>
-                        <p class="font-bold text-xs uppercase tracking-widest text-yellow-500">Supermercados El Norte</p>
-                        <p class="text-[10px] text-slate-400">Abastecimiento y Stock</p>
-                    </div>
-                </div>
-                <!-- Testimonio 4 -->
-                <div class="bg-slate-800/80 p-6 flex flex-col justify-between border-b-4 border-yellow-500 shadow-lg rounded-lg">
-                    <p class="italic text-slate-300 text-xs leading-relaxed mb-6">"Hemos tenido respuestas ágiles frente a despachos imprevistos. Un aliado de total garantía para la cadena de suministro."</p>
-                    <div>
-                        <p class="font-bold text-xs uppercase tracking-widest text-yellow-500">Salud Integral</p>
-                        <p class="text-[10px] text-slate-400">Distribución Farmacéutica</p>
-                    </div>
-                </div>
-                <!-- Testimonio 5 -->
-                <div class="bg-slate-800/80 p-6 flex flex-col justify-between border-b-4 border-yellow-500 shadow-lg rounded-lg">
-                    <p class="italic text-slate-300 text-xs leading-relaxed mb-6">"Furgones impecables, herméticos y limpios. Protegen perfectamente todas nuestras cargas delicadas de carga general."</p>
-                    <div>
-                        <p class="font-bold text-xs uppercase tracking-widest text-yellow-500">Pyme Regional</p>
-                        <p class="text-[10px] text-slate-400">Manufactura Local</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 bg-black text-white text-center border-t border-slate-900">
-        <div class="text-2xl font-black tracking-tighter mb-4 text-white uppercase">FAST <span class="text-yellow-500">DEL NORTE</span></div>
-        <p class="text-[11px] uppercase tracking-widest text-slate-500 mb-2">Transportes Fast del Norte S.A.S. | NIT 901.888.777-1</p>
-        <p class="text-[10px] uppercase tracking-widest text-slate-400">Barranquilla, Atlántico | Colombia | 2026</p>
     </footer>
 
-    <!-- STREAMING_CHUNK:Implementing local state machines for the streamlined chatbot dialogue -->
-    <!-- Lógica de Conversación Totalmente Local (A prueba de fallas) -->
+    <!-- STREAMING_CHUNK:Implementing Chatbot logic... -->
     <script>
-        // Variables de Estado de la Conversación
-        let currentStep = 'idle'; // 'idle', 'cotizar_1', 'cotizar_2'
-        let cotizacionData = {
-            mercancia: '',
-            ruta: ''
-        };
-
-        const chatBox = document.getElementById('conversacion-box');
-
-        // Función para renderizar mensajes del bot Laura con animación de escritura
-        function responderLaura(htmlContenido, callback) {
-            const loadingBubble = document.createElement('div');
-            loadingBubble.className = "flex gap-3 id-loading-temp";
-            loadingBubble.innerHTML = `
-                <div class="w-8 h-8 rounded-full bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0">L</div>
-                <div class="bg-slate-800 text-slate-400 p-3 rounded-xl max-w-[85%] shadow-md flex items-center gap-1">
-                    <span>Laura está escribiendo</span>
-                    <span class="inline-flex gap-0.5">
-                        <span class="w-1.5 h-1.5 bg-slate-400 rounded-full typing-dot"></span>
-                        <span class="w-1.5 h-1.5 bg-slate-400 rounded-full typing-dot"></span>
-                        <span class="w-1.5 h-1.5 bg-slate-400 rounded-full typing-dot"></span>
-                    </span>
-                </div>
-            `;
-            chatBox.appendChild(loadingBubble);
-            chatBox.scrollTop = chatBox.scrollHeight;
-
-            // Retraso de simulación de respuesta realista (1 segundo)
-            setTimeout(() => {
-                loadingBubble.remove();
-                
-                const botBubble = document.createElement('div');
-                botBubble.className = "flex gap-3 animate-fade-in";
-                botBubble.innerHTML = `
-                    <div class="w-8 h-8 rounded-full bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0">L</div>
-                    <div class="bg-slate-800 text-slate-100 p-4 rounded-xl max-w-[85%] shadow-md">
-                        ${htmlContenido}
-                    </div>
-                `;
-                chatBox.appendChild(botBubble);
-                chatBox.scrollTop = chatBox.scrollHeight;
-
-                if (callback) callback();
-            }, 1000);
-        }
-
-        // Renderizar entrada del usuario en el historial
-        function renderUsuario(mensajeTexto) {
-            const userBubble = document.createElement('div');
-            userBubble.className = "flex gap-2 justify-end";
-            userBubble.innerHTML = `
-                <div class="bg-yellow-500 text-black font-semibold p-3 rounded-xl max-w-[85%] shadow-sm">
-                    ${mensajeTexto}
-                </div>
-            `;
-            chatBox.appendChild(userBubble);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-
-        // Respuestas automáticas ante botones rápidos
-        function conversarOpcion(opcion) {
-            if (opcion === 'cotizar') {
-                renderUsuario("Quiero cotizar un flete de carga general.");
-                currentStep = 'cotizar_1';
-                
-                responderLaura(`
-                    <p class="font-bold text-yellow-400 mb-1">¡Claro que sí! Iniciemos tu cotización local.</p>
-                    <p class="text-slate-200">Primero, dime: <strong>¿Qué tipo de mercancía de carga general deseas transportar?</strong> (Ejemplo: cajas, pallets, estibas, insumos de retail, etc.)</p>
-                    <p class="text-slate-400 mt-2 italic text-[10px]">Escríbelo en la barra de texto de abajo para continuar.</p>
-                `);
-            } else if (opcion === 'flota') {
-                renderUsuario("Cuéntame de los camiones de furgón.");
-                responderLaura(`
-                    <p class="font-bold text-yellow-400 mb-1">Unidades Disponibles de Furgón Cerrado:</p>
-                    <p class="text-slate-200 mb-2">Ofrecemos dos alternativas adaptables para el casco urbano de Barranquilla:</p>
-                    <ul class="list-disc pl-4 space-y-1 text-slate-300 mb-3">
-                        <li><strong>Furgón Liviano Hino 300:</strong> Óptimo para última milla, entregas rápidas y calles estrechas.</li>
-                        <li><strong>Furgón Mediano Foton Aumark:</strong> Excelente capacidad y resistencia para cargas generales de alto volumen.</li>
-                    </ul>
-                    <p class="text-slate-200">¿Quieres cotizar con alguno de ellos de forma local?</p>
-                    <div class="mt-3">
-                        <button onclick="conversarOpcion('cotizar')" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-4 py-2 rounded-lg text-[11px] transition-all">Simular Cotización Ahora</button>
-                    </div>
-                `);
-            }
-        }
-
-        // Manejo de envío de inputs de texto escritos
-        function enviarMensajeUsuario(event) {
-            event.preventDefault();
+        let etapa = 0;
+        let info = { nombre: '', tipoCarga: '', ruta: '' };
+        
+        function manejarChat(e) {
+            e.preventDefault();
             const input = document.getElementById('chat-input');
             const texto = input.value.trim();
             if (!texto) return;
-
-            renderUsuario(texto);
+            
+            // Añadir mensaje del usuario
+            renderUserMsg(texto);
             input.value = '';
-
-            // Máquina de estados conversacional
-            if (currentStep === 'cotizar_1') {
-                cotizacionData.mercancia = texto;
-                currentStep = 'cotizar_2';
-                responderLaura(`
-                    <p class="text-slate-200">Registrado: <strong class="text-yellow-400">${texto}</strong>.</p>
-                    <p class="text-slate-200 mt-2">Segundo: <strong>¿Cuál es el barrio de origen (recogida) y de destino (entrega) en Barranquilla?</strong> (Ej: De Soledad a la Vía 40)</p>
-                `);
-            } else if (currentStep === 'cotizar_2') {
-                cotizacionData.ruta = texto;
-                finalizarCotizacionLocal();
-            } else {
-                procesarMensajeGeneral(texto);
+            
+            // Lógica
+            if (etapa === 0) {
+                info.nombre = texto;
+                etapa = 1;
+                appendBotMsg(`Un gusto conocerte, ${texto}. ¿Qué tipo de mercancía deseas transportar?`);
+            } else if (etapa === 1) {
+                info.tipoCarga = texto;
+                etapa = 2;
+                appendBotMsg(`Perfecto. ¿Cuál es la ruta (origen y destino) para este servicio?`);
+            } else if (etapa === 2) {
+                info.ruta = texto;
+                appendBotMsg(`Excelente, ${info.nombre}. Hemos consolidado tu cotización para: <strong>${info.tipoCarga}</strong> en la ruta <strong>${info.ruta}</strong>. Haz clic abajo para enviármelo por WhatsApp y procesarlo inmediatamente.<br><br><a href="https://wa.me/573226753828?text=Hola Laura, soy ${info.nombre}. Necesito cotizar: ${info.tipoCarga} en la ruta ${info.ruta}" class="block bg-green-600 text-white font-bold p-4 rounded-lg text-center shadow-lg hover:bg-green-500 transition-all">✅ Enviar a WhatsApp</a>`);
             }
         }
-
-        // Finalizar Cotización de Manera Local SIN Redirecciones Automáticas
-        function finalizarCotizacionLocal() {
-            currentStep = 'idle';
-
-            responderLaura(`
-                <p class="font-bold text-yellow-400 mb-1">🎉 ¡Datos recopilados con éxito!</p>
-                <div class="bg-slate-900 border border-slate-700 p-4 rounded-lg my-3 space-y-1 text-slate-300">
-                    <p>📦 <strong>Mercancía:</strong> ${cotizacionData.mercancia}</p>
-                    <p>📍 <strong>Recorrido:</strong> ${cotizacionData.ruta}</p>
-                </div>
-                <p class="text-slate-200 mb-3">Toda esta información está lista. Haz clic abajo para enviársela de inmediato a nuestro asesor por WhatsApp al número 3226753828 y recibir tu tarifa final al instante.</p>
-                <button onclick="redirigirWhatsAppCompleto()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition-all shadow-md">
-                    ✅ Enviar Cotización Oficial a WhatsApp
-                </button>
-            `);
+        
+        function renderUserMsg(txt) {
+            const box = document.getElementById('chat-box');
+            const div = document.createElement('div');
+            div.className = 'flex gap-4 justify-end';
+            div.innerHTML = `<div class="bg-yellow-600 text-white p-5 rounded-2xl rounded-tr-none text-sm leading-relaxed">${txt}</div><div class="w-8 h-8 rounded-full bg-slate-700 shrink-0 flex items-center justify-center font-bold text-xs text-white">TÚ</div>`;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
         }
-
-        // Respuestas generales inteligentes para palabras clave
-        function procesarMensajeGeneral(texto) {
-            const lowText = texto.toLowerCase();
-
-            if (lowText.includes('hola') || lowText.includes('buenos dias') || lowText.includes('buenas tardes')) {
-                responderLaura(`
-                    <p class="text-slate-200">¡Hola! Qué gusto saludarte. ¿Te gustaría calcular un flete de carga general de forma interactiva hoy?</p>
-                    <button onclick="conversarOpcion('cotizar')" class="mt-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded text-[10px]">Iniciar Cotización</button>
-                `);
-            } else if (lowText.includes('precio') || lowText.includes('cuanto cuesta') || lowText.includes('tarifa') || lowText.includes('flete')) {
-                responderLaura(`
-                    <p class="text-slate-200">Nuestros fletes se calculan según el furgón que elijas y el trayecto. ¿Quieres que simulemos una tarifa ahora?</p>
-                    <button onclick="conversarOpcion('cotizar')" class="mt-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded text-[10px]">Iniciar Cotización</button>
-                `);
-            } else if (lowText.includes('nacional') || lowText.includes('seca')) {
-                responderLaura(`
-                    <p class="text-slate-200">En <strong>Transportes Fast del Norte</strong> nos enfocamos puramente en **Carga General Urbana** y trayectos locales dentro de Barranquilla y su área metropolitana. No operamos rutas nacionales de larga distancia.</p>
-                `);
-            } else {
-                responderLaura(`
-                    <p class="text-slate-200">He recibido tu mensaje. Para darte la mejor experiencia en fletes de carga general, ¿por qué no iniciamos una cotización local rápida?</p>
-                    <button onclick="conversarOpcion('cotizar')" class="mt-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-3 py-1.5 rounded text-[10px]">Cotizar Flete</button>
-                `);
-            }
-        }
-
-        // Reiniciar conversación localmente sin recargar la página entera (Wipe / Borrar Chat)
-        function reiniciarConversacionLocal() {
-            currentStep = 'idle';
-            cotizacionData = { mercancia: '', ruta: '' };
-            
-            // Reestablecer contenido del chat
-            chatBox.innerHTML = `
-                <div class="flex gap-3">
-                    <div class="w-8 h-8 rounded-full bg-yellow-500 text-black font-bold flex items-center justify-center shrink-0">L</div>
-                    <div class="bg-slate-800 text-slate-100 p-4 rounded-xl max-w-[85%] shadow-md">
-                        <p class="font-bold text-yellow-400 mb-1">¡Historial Borrado de forma Local! 👋</p>
-                        <p class="text-slate-200">He limpiado la conversación con éxito. ¿Cómo te puedo colaborar de nuevo en carga general urbana? Selecciona tu opción:</p>
-                        
-                        <div class="mt-4">
-                            <button onclick="conversarOpcion('cotizar')" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black p-3 rounded-lg text-left font-bold transition-all shadow-sm">
-                                📋 Iniciar Nueva Simulación
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-            chatBox.scrollTop = 0;
-        }
-
-        // Abre WhatsApp con el resumen de la conversación estructurado SÓLO cuando el usuario lo decide
-        function redirigirWhatsAppCompleto() {
-            const mensajePrefiltrado = `Hola Laura, acabo de simular mi cotización de carga general urbana en Barranquilla:
-- Mercancía: ${cotizacionData.mercancia}
-- Recorrido: ${cotizacionData.ruta}`;
-            
-            window.open('https://wa.me/573226753828?text=' + encodeURIComponent(mensajePrefiltrado), '_blank');
+        
+        function appendBotMsg(txt) {
+            const box = document.getElementById('chat-box');
+            const div = document.createElement('div');
+            div.className = 'flex gap-4';
+            div.innerHTML = `<div class="w-8 h-8 rounded-full bg-yellow-600 shrink-0 flex items-center justify-center font-bold text-xs text-black">L</div><div class="bg-slate-800 p-5 rounded-2xl rounded-tl-none text-slate-200 text-sm leading-relaxed max-w-lg">${txt}</div>`;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
         }
     </script>
-
 </body>
 </html>
 ```eof
