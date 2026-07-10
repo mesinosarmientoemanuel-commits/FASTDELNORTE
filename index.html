@@ -1,171 +1,72 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+    <!-- STREAMING_CHUNK:Defining metadata and imports -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transportes Fast del Norte S.A.S. | Logística Integral Nacional</title>
+    <title>Transportes Fast del Norte S.A.S. | Logística Integral</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); }
-        .chat-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
 </head>
 <body class="bg-white text-slate-900">
 
+    <!-- STREAMING_CHUNK:Rendering navigation -->
     <nav class="sticky top-0 bg-white/95 backdrop-blur-sm z-50 px-6 py-4 border-b border-slate-200">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-xl font-black tracking-tighter uppercase text-black">Fast <span class="text-yellow-500">del Norte</span></div>
-            <div class="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-widest text-slate-600">
-                <a href="#inicio" class="hover:text-black">Inicio</a>
-                <a href="#nosotros" class="hover:text-black">Nosotros</a>
-                <a href="#servicios" class="hover:text-black">Soluciones</a>
-                <a href="#clientes" class="bg-black text-white px-5 py-2 hover:bg-yellow-500 hover:text-black transition-all">Nuestra Flota</a>
-            </div>
         </div>
     </nav>
 
-    <header id="inicio" class="hero-gradient text-white py-32 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1]">Conectando tus necesidades <br><span class="text-yellow-500">con el destino</span>.</h1>
-            <p class="text-xl text-slate-400 mb-12 leading-relaxed max-w-3xl mx-auto">Soluciones logísticas integrales para personas y empresas en todo el territorio nacional. Rapidez, seguridad y eficiencia en cada envío.</p>
-            <a href="#clientes" class="inline-block bg-yellow-500 text-black font-bold px-10 py-5 uppercase tracking-widest hover:bg-white transition-all shadow-lg hover:shadow-yellow-500/20">Ver Nuestra Flota</a>
+    <!-- STREAMING_CHUNK:Rendering hero with background cargo image -->
+    <header class="relative w-full h-[600px] flex items-center justify-center text-center px-6">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=1600');">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div class="relative z-10 text-white">
+            <h1 class="text-5xl md:text-7xl font-black mb-6">Transportes Fast del Norte</h1>
+            <p class="text-xl md:text-2xl text-yellow-500 font-bold uppercase tracking-widest">Logística Integral de Confianza</p>
         </div>
     </header>
 
-    <section id="nosotros" class="py-24 max-w-5xl mx-auto px-6">
-        <h2 class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-4 text-center">Nuestra Identidad</h2>
-        <h3 class="text-4xl font-black mb-12 text-center">Excelencia en Logística</h3>
-        <p class="text-lg leading-loose text-slate-700 text-center">En Transportes Fast del Norte S.A.S., entendemos que tu carga es más que mercancía; es un compromiso con tus metas. Desde nuestra fundación en 2025, nos hemos especializado en optimizar la distribución de rutas, combinando tecnología de vanguardia con un equipo humano altamente capacitado para ofrecerte un servicio de carga urbana y nacional sin complicaciones.</p>
+    <!-- STREAMING_CHUNK:Rendering urban cargo title section -->
+    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-4">Nuestro Servicio Principal</h2>
+        <h3 class="text-4xl font-black mb-6">Líderes en Carga Urbana y Distribución Nacional</h3>
+        <p class="text-lg text-slate-600 leading-relaxed">Optimizamos el flujo de mercancías en Barranquilla y todo el territorio nacional con nuestra avanzada flota de camiones y furgones, garantizando seguridad, puntualidad y eficiencia operativa.</p>
     </section>
 
-    <section id="servicios" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-4 text-center">Nuestras Soluciones</h2>
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div class="p-8 bg-white border border-slate-200 hover:border-yellow-500 transition-colors">
-                    <h4 class="text-xl font-bold mb-4">Logística Corporativa</h4>
-                    <p class="text-slate-600 text-sm">Soluciones a la medida para empresas que buscan puntualidad y control total sobre su cadena de suministro.</p>
-                </div>
-                <div class="p-8 bg-white border border-slate-200 hover:border-yellow-500 transition-colors">
-                    <h4 class="text-xl font-bold mb-4">Envíos para Particulares</h4>
-                    <p class="text-slate-600 text-sm">¿Necesitas mover algo importante? Lo trasladamos con el mismo nivel de cuidado y prioridad que un despacho corporativo.</p>
-                </div>
-                <div class="p-8 bg-white border border-slate-200 hover:border-yellow-500 transition-colors">
-                    <h4 class="text-xl font-bold mb-4">Optimización de Rutas</h4>
-                    <p class="text-slate-600 text-sm">Utilizamos tecnología de simulación avanzada para garantizar que tu carga llegue por la vía más eficiente, ahorrando tiempo y costos.</p>
-                </div>
+    <!-- STREAMING_CHUNK:Rendering corporate values -->
+    <section class="py-20 bg-slate-50 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-center font-bold mb-12 text-xl uppercase tracking-[0.2em]">Valores Corporativos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+                <div><div class="text-yellow-500 mb-4 text-2xl font-black">01</div><h3 class="font-bold text-sm uppercase mb-2">Puntualidad</h3><p class="text-[11px] text-slate-500">Nuestro compromiso absoluto.</p></div>
+                <div><div class="text-yellow-500 mb-4 text-2xl font-black">02</div><h3 class="font-bold text-sm uppercase mb-2">Seguridad</h3><p class="text-[11px] text-slate-500">Protección total de carga.</p></div>
+                <div><div class="text-yellow-500 mb-4 text-2xl font-black">03</div><h3 class="font-bold text-sm uppercase mb-2">Innovación</h3><p class="text-[11px] text-slate-500">Tecnología de avanzada.</p></div>
+                <div><div class="text-yellow-500 mb-4 text-2xl font-black">04</div><h3 class="font-bold text-sm uppercase mb-2">Integridad</h3><p class="text-[11px] text-slate-500">Ética en cada paso.</p></div>
+                <div><div class="text-yellow-500 mb-4 text-2xl font-black">05</div><h3 class="font-bold text-sm uppercase mb-2">Compromiso</h3><p class="text-[11px] text-slate-500">Excelencia garantizada.</p></div>
             </div>
         </div>
     </section>
 
-    <section id="clientes" class="py-24 max-w-7xl mx-auto px-6">
-        <h2 class="text-xs font-bold text-yellow-600 uppercase tracking-[0.3em] mb-4 text-center">Lo que dicen de nosotros</h2>
-        <div class="grid md:grid-cols-2 gap-12 mb-16">
-            <div class="bg-black text-white p-8">
-                <p class="italic text-lg mb-6">"La fiabilidad de su flota es impecable. Nuestros despachos urbanos en Barranquilla nunca habían sido tan ágiles como con Fast del Norte."</p>
-                <span class="font-bold text-yellow-500">— Director Logístico, Retail Regional</span>
-            </div>
-            <div class="bg-slate-100 p-8">
-                <p class="italic text-lg mb-6">"Servicio profesional y puntual. Sus furgones siempre están en perfectas condiciones, lo que nos da total tranquilidad con nuestra mercancía."</p>
-                <span class="font-bold text-slate-900">— Gerente de Operaciones, Industria Local</span>
-            </div>
-        </div>
-
-        <h3 class="text-3xl font-black mb-12 text-center uppercase tracking-widest">Nuestra Flota en Operación</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-            <img src="https://images.unsplash.com/photo-1580674285054-9464a929e711?auto=format&fit=crop&q=80&w=800" class="w-full h-80 object-cover shadow-lg border-2 border-slate-200" alt="Furgón de carga urbana">
-            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a265e?auto=format&fit=crop&q=80&w=800" class="w-full h-80 object-cover shadow-lg border-2 border-slate-200" alt="Unidad de transporte de carga">
-            <img src="https://images.unsplash.com/photo-1587582386926-c2227d6d376c?auto=format&fit=crop&q=80&w=800" class="w-full h-80 object-cover shadow-lg border-2 border-slate-200" alt="Flota de carga en ruta">
+    <!-- STREAMING_CHUNK:Rendering testimonials -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <h2 class="text-center font-bold mb-12 text-xl uppercase tracking-[0.2em]">Lo que dicen nuestros aliados</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 border border-slate-100 shadow-sm"><p class="text-sm italic">"Impecables en sus despachos urbanos."</p></div>
+            <div class="bg-white p-6 border border-slate-100 shadow-sm"><p class="text-sm italic">"Conductores expertos y profesionales."</p></div>
+            <div class="bg-white p-6 border border-slate-100 shadow-sm"><p class="text-sm italic">"Seguridad total en nuestra carga."</p></div>
         </div>
     </section>
 
-    <footer class="py-12 bg-black text-white text-center">
-        <div class="text-xl font-black tracking-tighter mb-4 text-white">FAST <span class="text-yellow-500">DEL NORTE</span></div>
-        <p class="text-[10px] uppercase tracking-widest text-slate-500 mb-6">Transportes Fast del Norte S.A.S. | Innovación en Logística | Barranquilla, Atlántico | Colombia</p>
-        <div class="flex justify-center gap-6 text-[10px] uppercase tracking-widest text-slate-400">
-            <a href="#" class="hover:text-yellow-500">Políticas de Privacidad</a>
-            <a href="#" class="hover:text-yellow-500">Términos de Servicio</a>
-            <a href="#" class="hover:text-yellow-500">Trabaja con nosotros</a>
-        </div>
+    <!-- STREAMING_CHUNK:Rendering footer -->
+    <footer class="py-10 bg-black text-white text-center text-[10px] uppercase tracking-widest">
+        Transportes Fast del Norte S.A.S. | Barranquilla, Colombia
     </footer>
 
-    <div id="chatbot-container" class="fixed bottom-6 right-6 z-[100]">
-        <button onclick="toggleChat()" id="chat-toggle" class="bg-yellow-500 p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></svg>
-        </button>
-
-        <div id="chat-window" class="hidden w-80 bg-white shadow-2xl rounded-lg border border-slate-200 overflow-hidden absolute bottom-20 right-0 flex flex-col chat-transition">
-            <div class="bg-black text-white p-4 flex justify-between items-center">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-yellow-500">Laura | Asistente Virtual</span>
-                <button onclick="closeChat()" class="text-slate-400 hover:text-white font-black text-lg transition-colors">✕</button>
-            </div>
-            <div id="chat-body" class="p-6 h-80 overflow-y-auto space-y-4 bg-slate-50 text-sm"></div>
-        </div>
-    </div>
-
-    <script>
-        const chatBody = document.getElementById('chat-body');
-        const chatWindow = document.getElementById('chat-window');
-
-        function toggleChat() {
-            chatWindow.classList.toggle('hidden');
-            if (!chatWindow.classList.contains('hidden') && chatBody.innerHTML === "") {
-                startChat();
-            }
-        }
-
-        function closeChat() {
-            chatWindow.classList.add('hidden');
-            chatBody.innerHTML = ""; // State Reset
-        }
-
-        function renderMessage(text) {
-            const div = document.createElement('div');
-            div.className = "bg-white p-3 border border-slate-200 rounded-sm shadow-sm text-slate-800";
-            div.innerText = text;
-            chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        function renderOptions(options) {
-            const div = document.createElement('div');
-            div.className = "grid gap-2 mt-2";
-            options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.className = "text-left text-[11px] bg-black text-white p-2 font-bold uppercase tracking-widest hover:bg-yellow-500 hover:text-black transition-all";
-                btn.innerText = opt.label;
-                btn.onclick = () => opt.callback(opt.value);
-                div.appendChild(btn);
-            });
-            chatBody.appendChild(div);
-        }
-
-        function startChat() {
-            renderMessage("¡Hola! Soy Laura, tu asistente virtual en Transportes Fast del Norte. ¿En qué puedo apoyarte hoy? Atendemos tanto solicitudes personales como requerimientos empresariales.");
-            renderOptions([
-                {label: "Cotizar un envío", value: "cotización", callback: handleServiceChoice},
-                {label: "Información general", value: "información", callback: finalizeChat},
-                {label: "Rastrear carga", value: "rastreo", callback: finalizeChat}
-            ]);
-        }
-
-        function handleServiceChoice() {
-            renderMessage("Entendido. ¿El servicio requerido es para una empresa o una solicitud particular?");
-            renderOptions([
-                {label: "Soy Empresa", value: "empresa", callback: finalizeChat},
-                {label: "Soy Particular", value: "particular", callback: finalizeChat}
-            ]);
-        }
-
-        function finalizeChat(choice) {
-            renderMessage("Excelente. Le conectaré con uno de nuestros asesores especializados para asistirle de inmediato.");
-            setTimeout(() => {
-                window.open(`https://wa.me/573226753828?text=Hola, contacto a través de la web para solicitar: ${choice}.`, '_blank');
-                closeChat();
-            }, 1200);
-        }
-    </script>
 </body>
 </html>
+```eof
